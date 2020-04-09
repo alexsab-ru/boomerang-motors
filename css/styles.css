@@ -9527,6 +9527,11 @@ form small a:hover {
   cursor: pointer;
 }
 
+.maps .dealer .lazyload {
+  background-size: auto;
+  background-color: #ffffff;
+}
+
 .maps .dealer-map:before, .maps .dealer-map2:before {
   content: '';
   display: block;
