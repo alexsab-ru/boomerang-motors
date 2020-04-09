@@ -9127,6 +9127,18 @@ form small a:hover {
   transition: all .25s ease;
 }
 
+@media (max-width: 575.98px) {
+  .services-item__title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 340px) {
+  .services-item__title {
+    font-size: 20px;
+  }
+}
+
 .services-item__title:hover {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -9193,7 +9205,7 @@ form small a:hover {
 
 @media (max-width: 575.98px) {
   .serv-table {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -9224,12 +9236,11 @@ form small a:hover {
 }
 
 .serv-table-td {
-  padding: 12px 0;
+  padding: 12px 10px;
   width: 100%;
   min-height: 46px;
   height: auto;
   text-align: left;
-  padding-left: 10px;
   position: relative;
   display: block;
 }
@@ -9374,6 +9385,12 @@ form small a:hover {
   line-height: 1.2;
 }
 
+@media (max-width: 575.98px) {
+  .offer-head h2 {
+    font-size: 36px;
+  }
+}
+
 .offer-head .descr {
   font-size: 24px;
   margin: 30px 0;
@@ -9469,6 +9486,12 @@ form small a:hover {
 .maps .dealer-info h2 {
   font-size: 42px;
   color: #000;
+}
+
+@media (max-width: 575.98px) {
+  .maps .dealer-info h2 {
+    font-size: 32px;
+  }
 }
 
 .maps .dealer-contacts {
@@ -9919,7 +9942,7 @@ form small a:hover {
   .hero, .hero.cover {
     background-position: top -270px center;
     background-repeat: no-repeat;
-    background-color: #93989e;
+    background-color: #f7f7f9;
     min-height: 0;
     height: auto;
   }

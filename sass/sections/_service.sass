@@ -21,6 +21,11 @@
 	cursor: pointer
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1)
 	transition: all .25s ease
+	+media-breakpoint-down(xs)
+		font-size: 22px
+	@media (max-width: 340px)
+		font-size: 20px
+
 
 	&:hover
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
@@ -67,7 +72,7 @@
 	display: none
 	margin-top: 20px
 	+media-breakpoint-down(xs)
-		font-size: 12px
+		font-size: 14px
 
 .serv-table-row
 	display: flex
@@ -84,13 +89,12 @@
 		color: #fff
 
 .serv-table-td
-	padding: 12px 0
+	padding: 12px 10px
 	// width: 15%
 	width: 100%
 	min-height: 46px
 	height: auto
 	text-align: left
-	padding-left: 10px
 	position: relative
 	display: block
 	+media-breakpoint-down(xs)
