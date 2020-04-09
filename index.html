@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+	<meta name="robots" content="noindex">
+
+	<title>Специальные предложения на сервис в Самаре</title>
+	<meta name="description" content="" />	
+    <!-- <link rel="canonical" href="https://service.avtobum63.ru"> -->
+
+	<!-- <meta property="og:url" content="https://service.avtobum63.ru" /> -->
+	<meta property="og:title" content="Специальные предложения на сервис в Самаре" />
+	<meta property="og:description" content="" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="/img/logo_infinity-0.svg" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#fff">
+	<!-- Custom Browsers Color End -->
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<!-- Style -->
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+	
+	<header class="header">
+		<div class="container-flued">
+			<div class="header-wrap">
+				<span class="header-logo">
+					<img src="img/logo-header.svg" alt="Бумеранг Автосервис">
+				</span>
+				<!-- /.header-logo -->
+				<div class="header-phones rand1">
+					<div class="phone phone-one">
+						<img src="img/map.svg" alt="Телефон">
+						<span class="phone-info">
+							<a target="_blank" href="https://yandex.ru/maps/?z=17&ll=50.292163,53.19354199999777&l=map&rtext=~53.193542,50.292163&origin=jsapi_2_1_76&from=api-maps">Как проехать</a>
+							<small>пр. Кирова, 10</small>
+						</span>							
+					</div>
+					<div class="phone phone-two">
+						<img src="img/phone.svg" alt="Телефон">
+						<span class="phone-info">
+							<a href="tel:88469228872">8 (846) 922-88-72</a>
+							<small>Заказать звонок</small>
+						</span>							
+					</div>
+					<div class="phone phone-three">
+						<img src="img/time.svg" alt="Телефон">
+						<span class="phone-info">
+							<a href="javascript:">8:00-20:00</a>
+							<small>Ежедневно</small>
+						</span>							
+					</div>
+				</div>
+				<!-- /.header-phones -->
+				<div class="header-right">
+					<a href="#callbackForm" class="btn modal-link">Обратный&nbsp;звонок</a>
+				</div>
+				<!-- /.header-right -->
+			</div>
+			<!-- /.header-wrap -->
+		</div>
+		<!-- /.container -->
+	</header>
+	<!-- /.header -->
+
+	<div class="hero cover" style="background-image: url(img/hero-2.jpg);">
+		<!-- <div id="bgndVideo" class="player"
+		data-property="{
+		videoURL: 'https://www.youtube.com/embed/6Tc5XFR7xz4',
+		containment: '.hero',
+		autoPlay: true,
+		mute: true,
+		startAt: 0,
+		opacity: 1,
+		showControls: false,
+		useOnMobile: false,
+		coverImage: 'img/hero-bg3.jpg',
+		mobileFallbackImage: 'img/mob-bg.jpg',
+		loop: true }">
+		</div> -->
+		<div class="container">
+			<div class="hero-wrap">
+				<div class="hero-text">
+					<h1>Ремонт автомобиля в&nbsp;Самаре</h1>
+					<span class="subtitle">по самой выгодной цене</span>
+				</div>
+				<!-- /.hero-text -->
+				<div class="hero-form">
+					<h2>Записаться на&nbsp;бесплатный контрольный осмотр</h2>
+					<p>Оставьте свой номер телефона, и&nbsp;мы&nbsp;перезвоним Вам</p>
+					<form method="POST">
+						<!-- Hidden Required Fields -->
+						<input type="hidden" name="project_name" value="Service Avtobum">
+						<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
+						<input type="hidden" name="form_subject" value="Форма из баннера">
+						<!-- END Hidden Required Fields -->
+
+						<input type="text" placeholder="Ваше имя*" name="Имя" required>
+						<input type="tel" placeholder="8 (999) 999-99-99" name="Телефон" required>
+						<button class="btn">Подписаться</button>
+						<small>Нажимая на кнопку "Подписаться", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
+					</form>
+				</div>
+				<!-- /.hero-form -->
+			</div>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.hero -->
+
+	<main>
+
+		<section class="services">
+			<div class="container">
+				<div class="services-list"></div>
+				<!-- /.services-list -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<!-- /.services -->
+
+		<section id="offer" class="offer">
+			<div class="container">
+				<div class="offer-head">
+					<h2>Есть вопросы?</h2>
+					<span class="descr">Оставьте заявку и мы проконсультируем Вас<br>по любым вопросам</span>
+				</div>
+				<!-- /.offer-head -->
+				<div class="offer-form">
+					<form method="POST">
+						<!-- Hidden Required Fields -->
+						<input type="hidden" name="project_name" value="Service Avtobum">
+						<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
+						<input type="hidden" name="form_subject" value="Форма - Хочу дешевле">
+						<!-- END Hidden Required Fields -->
+
+						<input type="text" placeholder="Ваше имя*" name="Имя" required>
+						<input type="tel" placeholder="8 (999) 999-99-99" name="Телефон" required>
+						<textarea name="Комментарий" placeholder="Комментарии"></textarea>
+						<button class="btn bounce">Отправить</button>
+						<small>Вам перезвонит менеджер и уточнит детали и удобное для Вас время, чтобы подготовить документы</small>
+						<small>Нажимая на кнопку "Подписаться", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
+					</form>
+				</div>
+				<!-- /.offer-form -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<!-- /.offer -->
+
+		<div class="maps rand">
+
+			<div class="dealer">
+				<span class="dealer-info">
+					<h2>Сервисный центр<br>БУМЕРАНГ-АВТО</h2>
+					<span class="dealer-contacts">
+						<a href="tel:88469228872" class="dealer-phone">8 (846) 922-88-72</a>
+						<a href="mailto:service@avtobum63.ru" class="dealer-email">service@avtobum63.ru</a>	
+					</span>
+					<span class="dealer-address">пр. Кирова, 10</span>
+					<sapn class="dealer-time">ежедневно: 8:00 — 20:00</sapn>
+				</span>
+				<span class="dealer-map lazyload" style="background-image: url(img/loading-1.gif);" data-srcbefore="img/map.jpg">
+					<span class="loader loader-default"></span>
+					<span id="map1"></span>
+				</span>
+			</div>
+			<!-- /.dealer -->
+
+
+		</div>
+		<!-- /.maps rand -->
+
+	</main>
+
+	<footer class="footer">
+		<p>Специальные предложения на сервис в Самаре</p>
+		<img class="logo" src="img/logo-header.svg" alt="Бумеранг Автосервис">
+	</footer>
+
+	<div class="top">
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+			<path style="fill:#000000;" d="M43.006,47.529H4.964c-2.635,0-4.791-2.156-4.791-4.791V4.697c0-2.635,2.156-4.791,4.791-4.791h38.042
+			c2.635,0,4.791,2.156,4.791,4.791v38.042C47.797,45.373,45.641,47.529,43.006,47.529z M25.503,16.881l6.994,7.049
+			c0.583,0.588,1.532,0.592,2.121,0.008c0.588-0.583,0.592-1.533,0.008-2.122l-9.562-9.637c-0.281-0.283-0.664-0.443-1.063-0.443
+			c0,0,0,0-0.001,0c-0.399,0-0.782,0.159-1.063,0.442l-9.591,9.637c-0.584,0.587-0.583,1.537,0.005,2.121
+			c0.292,0.292,0.675,0.437,1.058,0.437c0.385,0,0.77-0.147,1.063-0.442L22.5,16.87v19.163c0,0.828,0.671,1.5,1.5,1.5
+			s1.5-0.672,1.5-1.5L25.503,16.881z"></path>
+		</svg>
+	</div>
+
+	<!-- MODALS -->
+	<div class="privacy-wrap">
+	<div class="overlay"></div>
+	<!-- Политика -->
+	<div class="privacy" id="popup">
+		<button class="privacy-close">×</button>
+		<h2>Условия и способы обработки и хранения персональных данных</h2>
+		<p>Настоящее согласие дается на выполнение следующих действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача, в том числе трансграничная (распространение в случаях и в объеме, предусмотренных законодательством РФ, в том числе предоставление в государственные органы и иные организации), обезличивание, блокирование, удаление, уничтожение персональных данных в целях:<br>а) продвижения товаров и услуг, поставляемых OOO «БУМЕРАНГ-АВТО»;<br>б) получения и исследования статистических данных об объемах продаж и качестве услуг, оказываемых OOO «БУМЕРАНГ-АВТО»;<br>в) изучения конъюнктуры рынка автомобилей, автомобильных запасных частей и аксессуаров;<br>г) совершенствования уровня предоставляемых OOO «БУМЕРАНГ-АВТО» услуг;<br>д) осуществления гарантийного ремонта и технического обслуживания автомобилей;<br>е) осуществления других видов деятельности в рамках законодательства РФ с обязательным выполнением требований законодательства РФ в области персональных данных.<br><br>Настоящим Вы выражаете свое согласие на получение от OOO «БУМЕРАНГ-АВТО» рекламных материалов, связанных с продвижением товаров и услуг, поставляемых OOO «БУМЕРАНГ-АВТО», путем осуществления прямых контактов с помощью различных средств связи, включая, но, не ограничиваясь: почтовая рассылка, sms – рассылка, электронная почта, телефон, Интернет.<br><br>Персональные данные, полученные OOO «БУМЕРАНГ-АВТО», хранятся в соответствии с требованиями законодательства РФ на условиях конфиденциальности. Вы соглашаетесь с тем, что, если это необходимо для реализации целей, указанных выше, Ваши персональные данные могут быть переданы третьим лицам, которым OOO «БУМЕРАНГ-АВТО» и официальные дилеры OOO «БУМЕРАНГ-АВТО» могут поручить обработку Ваших персональных данных на основании договора, заключенного с такими лицами, при условии соблюдения требований законодательства РФ об обеспечении такими третьими лицами конфиденциальности и безопасности персональных данных при их обработке.<br><br>Оператор (Операторы) персональных данных ведет (ведут) деятельность на территории Российской Федерации в соответствии с законодательством Российской Федерации. Предлагаемые товары/работы/услуги доступны к получению на территории Российской Федерации. Мониторинг потребительского поведения субъектов, находящихся за пределами Российской Федерации, не ведется.<br><br>Настоящее согласие на обработку персональных данных действует с момента проставления отметки и до получения письменного отзыва данного согласия. Настоящим Вы подтверждаете, что ознакомлены с порядком отзыва согласия на обработку персональных данных, представленным ниже.<br><br><br>«Порядок отзыва» Согласие может быть в любое время отозвано Вами путем уведомления официального дилера OOO «БУМЕРАНГ-АВТО» на территории России, либо путем направления в письменной форме уведомления в адрес OOO «БУМЕРАНГ-АВТО» (заказным почтовым отправлением с описью вложения).<br><br>*OOO «БУМЕРАНГ-АВТО», г. Самара, пр. Кирова, 10 (<a href="https://service.avtobum63.ru/" style="background-color: rgba(255, 255, 255, 0.97); color: rgb(17, 85, 204); text-decoration-line: underline; font-size: 16px;">service.avtobum63.ru</a>)<br>**OOO «БУМЕРАНГ-АВТО» оставляет за собой право поручать обработку предоставленных персональных данных другим лицам, в том числе находящимся за пределами Российской Федерации»</p>
+	</div>
+	</div>
+
+	<!-- Обратная связь -->
+	<div class="modal mfp-hide white-popup-block" id="callbackForm">
+		<h2>Перезвоните мне</h2>
+		<p>Можем предложить специальные условия именно для вас!</p>
+		<form method="POST">
+			<!-- Hidden Required Fields -->
+			<input type="hidden" name="project_name" value="Service Avtobum">
+			<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
+			<input type="hidden" name="form_subject" value="Форма - Заказ обратного звонка">
+			<!-- END Hidden Required Fields -->
+
+			<input type="text" placeholder="Ваше имя*" name="Имя" required>
+			<input type="tel" placeholder="8 (999) 999-99-99" name="Телефон" required>
+			<button class="btn">Перезвоните</button>
+			<small>Нажимая на кнопку действия, я даю согласие на <a href="#popup">обработку персональных данных</a></small>
+		</form>
+	</div>
+
+	<!-- Узнать цену -->
+	<div class="modal mfp-hide white-popup-block" id="cheaper">
+		<h2></h2>
+		<h3></h3>
+		<p>Оставьте свой номер телефона и наш менеджер свяжется с Вами</p>
+		<form method="POST">
+			<!-- Hidden Required Fields -->
+			<input type="hidden" name="project_name" value="Service Avtobum">
+			<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
+			<input type="hidden" name="form_subject" value="Попап форма - хочу дешевле">
+			<!-- END Hidden Required Fields -->
+
+			<input type="text" placeholder="Ваше имя*" name="Имя" required>
+			<input type="tel" placeholder="8 (999) 999-99-99" name="Телефон" required>
+			<button class="btn">Узнать цену</button>
+			<small>Нажимая на кнопку действия, я даю согласие на <a href="#popup">обработку персональных данных</a></small>
+		</form>
+	</div>
+
+	<div class="thanks modal mfp-hide white-popup-block">
+		<h2>Спасибо!</h2>
+		<p>Ваше сообщение успешно отправлено!<br>В скором времени мы свяжемся с Вами!</p>
+	</div>
+
+	<!-- /MODALS -->
+
+	<script src="js/scripts.min.js"></script>
+
+	<script>
+		
+		var services = [ {
+				title: "Механический ремонт",
+				list: [
+					'ремонт бензиновых и дизельных двигателей',
+					'чистка топливной системы',
+					'проведение планового технического обслуживания',
+					'замена масла в узлах и агрегатах(двигатель, МКПП,АКПП,РКПП,пер.  и зад.редуктор)',
+					'замена технических жидкостей (антифриз, тормозная жидкость)',
+					'регулировочно-смазочные работы',
+					'диагностика и ремонт ходовой любой сложности',
+					'ремонт тормозной системы',
+					'замена сцепления',
+					'с\у узлов и агрегатов',
+					'замена ремня и цепи ГРМ',
+					'ремонт 8 и 16 клапанных ГБЦ',
+					'ремонт МКПП, РКПП',
+					'шиномонтаж',
+				],
+			},
+			{ 
+				title: "Диагностика и электрика",
+				list: [
+					'сканирование ЭБУ',
+					'диагностика двигателя',
+					'диагностика топливной системы',
+					'промывка форсунок',
+					'измерение компрессии',
+					'установка GPSмаяков',
+					'ремонт  стартеров и генераторов',
+					'услуги автоэлектрика',
+					'установка доп. оборудования',
+				],
+			},
+			{ 
+				title: "Кузовной ремонт",
+				list: [
+					'кузовные работы с устранением перекосов лонжеронов, проемов дверей',
+					'ремонт, восстановление и замена кузовных панелей',
+					'покраска элементов  от локальной до полной ',
+					'полная покраска кузова в профессиональной сушильно - покрасочной камере',
+					'ремонт бамперов',
+					'полировка и восстановление ЛКП',
+					'замена и установка автостекол',
+				],
+			}
+		];
+
+		$.each(services, function(key, val){
+			out = '<div class="services-item">';
+			out += '<h2 class="services-item__title" id="'+ key +'">'+ val.title +'</h2>';
+			out += '<span class="serv-table" data-id="'+ key +'">';
+			out += '<span class="serv-table-head serv-table-row"><span class="serv-table-td">Виды работ</span></span>';
+			$.each(val.list, function(index, task){
+				out += '<span class="serv-table-row">';
+				out += '<span class="serv-table-td">'+ task +'</span>';
+				out += '</span>';							
+			});
+			out += '<span class="serv-table-foot serv-table-row"><span class="serv-table-td"><a href="#cheaper" class="modal-link prace-link">Узнать цену</a></span></span>';
+			out += '</span>';
+			out += '</div>';
+			$('.services-list').append(out);
+		});
+
+	</script>
+
+
+</body>
+</html>

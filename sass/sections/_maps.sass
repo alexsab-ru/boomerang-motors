@@ -1,0 +1,123 @@
+// MAPS
+.maps
+	padding: 50px 0 0
+	.dealer
+		background-color: #F6F7F8
+		display: flex
+		&:nth-child(even)
+			flex-direction: row-reverse
+		&-info
+			width: 50%
+			min-height: 500px
+			height: 75vh
+			display: flex
+			flex-direction: column
+			justify-content: center
+			padding-left: 100px
+			h2
+				font-size: 42px
+				color: #000
+		&-contacts
+			margin: 30px 0
+			a
+				display: block
+				color: $text
+				font-weight: 300
+				font-size: 24px
+		&-address
+			font-size: 18px
+			margin-bottom: 30px
+		&-time
+			font-size: 18px
+		&-map, &-map2
+			background-color: #ccc
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center
+			width: 50%
+			min-height: 500px
+			height: 75vh
+			position: relative
+			overflow: hidden
+			cursor: pointer
+
+.maps .dealer-map:before, .maps .dealer-map2:before
+	content: ''
+	display: block
+	position: absolute
+	background-size: cover
+	background-position: center
+	width: 100%
+	height: 100%
+
+.loader 
+	position: absolute
+	z-index: 9
+	top: -100%
+	left: 0
+	box-sizing: border-box
+	width: 100%
+	height: 100%
+	overflow: hidden
+	color: #000000
+	transition: opacity .7s ease
+	opacity: 0
+	background-color: rgba(0, 0, 0, .55)
+
+
+.loader:after,
+.loader:before 
+	box-sizing: border-box
+
+
+.loader.is-active 
+	top: 0
+	opacity: 1
+
+
+.loader-default:after 
+	position: absolute
+	top: calc(50% - 24px)
+	left: calc(50% - 24px)
+	width: 48px
+	height: 48px
+	content: ''
+	-webkit-animation: rotation 1s linear infinite
+	animation: rotation 1s linear infinite
+	border: solid 8px #ffffff
+	border-left-color: transparent
+	border-radius: 50%
+
+#map1, #map2
+	position: relative
+	z-index: 7
+	width: 100%
+	display: block
+	min-height: 500px
+	height: 75vh
+	cursor: pointer
+	background-color: transparent
+
+@-webkit-keyframes rotation 
+	from 
+		transform: rotate(0)
+	to 
+		transform: rotate(359deg)
+	
+@keyframes rotation 
+	from 
+		transform: rotate(0)
+	to 
+		transform: rotate(359deg)
+
+@-webkit-keyframes blink 
+	from 
+		opacity: .5	
+	to 
+		opacity: 1
+
+@keyframes blink 
+	from 
+		opacity: .5		
+	to 
+		opacity: 1

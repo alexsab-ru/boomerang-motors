@@ -1,0 +1,178 @@
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.car
+		padding-bottom: 150px
+		.btn-wrap
+			flex-direction: column
+			.btn
+				display: block
+				width: 100%
+				text-align: center
+				&-white
+					margin-bottom: 10px
+		.price
+			bottom: 120px
+
+// ≥992px
++media-breakpoint-down(md)
+	.container
+		max-width: 97%
+	h1
+		font-size: 3.6vmax
+	.hero-wrap
+		padding-top: 10%
+	.subtitle
+		font-size: 2.1vmax
+	.header-logo img
+		// width: 80px
+	.maps .dealer-info
+		padding-left: 50px
+
+@media  (max-width: 1084px) 
+	.header
+		position: relative
+	.header-logo img, .header-phones
+		margin-bottom: 15px
+	.header-wrap
+		flex-direction: column
+		padding: 15px 0
+
+
+// ≥768px
++media-breakpoint-down(sm)
+	.hero
+		padding-top: 0
+		background-image: url(../img/hero-mob.jpg) !important
+		background-size: cover
+		background-position: center
+		z-index: 1
+		&:before
+			z-index: -1
+			background-color: rgba(#000, .6)
+	.hero-wrap
+		flex-direction: column
+		align-items: center
+	.hero-text
+		margin-bottom: 40px
+	h1
+		font-size: 42px
+	.subtitle
+		font-size: 24px
+	.hero-form button
+		animation-iteration-count: inherit
+	.maps .dealer, .maps .dealer:nth-child(even)
+		flex-direction: column
+	.maps .dealer-info, .maps .dealer-map, .maps .dealer-map2
+		width: 100%
+	.cars-list
+		justify-content: space-around
+	.car
+		width: 46%
+		margin-left: 2%
+		margin-right: 2%	
+	.player
+		display: none
+	.modal
+		position: relative
+		top: 30px
+		transform: translate(-50%, 0%)
+		padding: 25px 15px
+	
+// ≥576px
++media-breakpoint-down(xs)
+	.cars-links li
+		flex: none
+	.header-phones
+		flex-direction: column
+		margin-bottom: 5px
+	.header .phone
+		margin-bottom: 15px
+	h1
+		font-size: 30px
+		line-height: 1.4
+	.subtitle
+		font-size: 22px
+	.hero, .hero.cover
+		background-position: top -270px center
+		background-repeat: no-repeat
+		background-color: #93989e
+		min-height: 0
+		height: auto
+	.hero-form
+		padding: 25px 20px
+	.t-radio__control, form small
+		font-size: 14px
+	.offer-head .descr
+		font-size: 20px
+	.maps .dealer-info
+		padding-left: 5%
+	.maps .dealer-info, .maps .dealer-map, .maps .dealer-map2, #map1, #map2
+		min-height: auto
+		height: 400px
+	.maps .dealer-info h2
+		line-height: 1.2
+	.maps .dealer-contacts a
+		font-size: 18px
+	.cars-list
+		justify-content: center
+	.car
+		width: 100%
+		margin-left: 0
+		margin-right: 0
+		margin-bottom: 50px
+	.car .photo
+		height: 50vw
+	.car h2
+		margin-left: 15px
+	.car h2:before
+		left: -10px
+	.car h2:after
+		right: -10px
+	.benefit
+		left: 0
+	.offer
+		padding: 25px 0
+	.modal .range__title
+		font-size: 16px
+	.privacy
+		padding: 40px 12px
+		h2
+			font-size: 18px
+		p
+			font-size: 15px
+			text-align: left
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
+	body
+		font-size: 20px
+
+@media (min-width: 1600px) 
+	.container 
+		max-width: 1560px
+	body 
+		font-size: 22px
+	.car
+		width: 21%
+	.car .btn-wrap .btn
+		padding: 12px 25px
+	.cars-links li
+		flex: none
+	.car .descr
+		font-size: 17px
+	
+
