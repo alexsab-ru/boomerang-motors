@@ -49,11 +49,18 @@
 			line-height: 1.55
 h1
 	font-size: 52px
-	margin-top: -15px
+	// margin-top: -15px
+	margin-top: 0.5rem
 	line-height: 1
 .subtitle
 	font-size: 26px
 	display: block
+	padding-left: 25px
+	&:before
+		content: '✓'
+		display: inline-block
+		min-width: 25px
+		margin-left: -25px
 
 .t-radio__control 
 	display: table

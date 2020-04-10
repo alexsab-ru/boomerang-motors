@@ -8995,13 +8995,21 @@ strong {
 
 h1 {
   font-size: 52px;
-  margin-top: -15px;
+  margin-top: 0.5rem;
   line-height: 1;
 }
 
 .subtitle {
   font-size: 26px;
   display: block;
+  padding-left: 25px;
+}
+
+.subtitle:before {
+  content: '✓';
+  display: inline-block;
+  min-width: 25px;
+  margin-left: -25px;
 }
 
 .t-radio__control {
@@ -9849,7 +9857,7 @@ p.oferta {
   position: relative;
   margin-top: 20px;
   padding-bottom: 50px;
-  height: 500px;
+  height: 520px;
 }
 
 .replacement:after {
@@ -9887,21 +9895,45 @@ p.oferta {
   display: block;
 }
 
+.replacement-head .descr sup {
+  color: #666;
+}
+
 .replacement-form {
   width: 100%;
   margin: 0 auto;
   position: absolute;
   bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .replacement-form button, .replacement-form .btn {
   display: inline-block;
   position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
   padding: 15px 50px;
+  margin-bottom: 20px;
+}
+
+.replacement-form small {
+  color: #666;
+  display: inline-block;
+  position: relative;
 }
 
 /*==========  Desktop First  ==========*/
