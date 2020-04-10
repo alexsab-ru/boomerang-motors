@@ -122,14 +122,12 @@ jQuery(function($) {
 	});
 	/**/
 
-	$('.prace-link').on('click', function(){
-		var dataId = $(this).closest('.serv-table').data('id');
-		console.log(dataId);
-		var carModel = $(this).closest('.services-item').find("#" + dataId).text();
-		var servName = $(this).closest('.services-item').children('.services-item__title').text();
-		
-		// $('#cheaper').find('h2').text('' + carModel);
-		$('#cheaper').find('h3').text(servName);
+	$('a[href="#cheaper"]').on('click', function(){
+		var servName = $(this).data('title');
+		if(servName) 
+			$('#cheaper').find('h3').text(servName);
+		else
+			$('#cheaper').find('h3').text($(this).text());
 
 	});
 

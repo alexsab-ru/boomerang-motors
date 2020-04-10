@@ -32,10 +32,12 @@
 	transform: translate(-50%, 0)
 	max-width: 450px
 	width: 100%
-	&-link
+	&-link.nowrap
 		white-space: nowrap
-	h2, p
+	h2, p, h3
 		text-align: center
+	h2:first-letter, p:first-letter, h3:first-letter
+		text-transform: uppercase
 	p
 		font-size: 16px
 	.range

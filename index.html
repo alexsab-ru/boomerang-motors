@@ -65,7 +65,7 @@
 				</div>
 				<!-- /.header-phones -->
 				<div class="header-right">
-					<a href="#callbackForm" class="btn modal-link">Обратный&nbsp;звонок</a>
+					<a href="#callbackForm" class="btn modal-link nowrap">Обратный&nbsp;звонок</a>
 				</div>
 				<!-- /.header-right -->
 			</div>
@@ -93,7 +93,7 @@
 		<div class="container">
 			<div class="hero-wrap">
 				<div class="hero-text">
-					<h1>Ремонт автомобиля в&nbsp;Самаре</h1>
+					<h1>Ремонт автомобилей в&nbsp;Самаре</h1>
 					<span class="subtitle">по самой выгодной цене</span>
 				</div>
 				<!-- /.hero-text -->
@@ -122,9 +122,28 @@
 	<!-- /.hero -->
 
 	<main>
+		
+		<section class="replacement">
+			<div class="container-flued">
+				<div class="replacement-head">
+					<h2>Предоставляем подменный авто</h2>
+					<span class="descr">на время ремонта вашего</span>
+				</div>
+				<div class="replacement-form">
+					<a href="#cheaper" class="btn modal-link nowrap bounce" data-title="Хочу подменный авто">Записаться</a>
+					<!-- <button href="#callbackForm" class="btn bounce">Записаться</button> -->
+				</div>
+			</div>
+			<!-- /.container-flued -->
+		</section>
+		<!-- /.replacement -->
 
 		<section class="services">
 			<div class="container">
+				<div class="services-head">
+					<h2>Наши услуги</h2>
+					<span class="descr">На&nbsp;большинство проводимых нами работ и&nbsp;запчасти мы&nbsp;даем гарантию до&nbsp;24&nbsp;месяцев или 40&nbsp;000&nbsp;км пробега</span>
+				</div>
 				<div class="services-list"></div>
 				<!-- /.services-list -->
 			</div>
@@ -300,7 +319,7 @@
 			{ 
 				title: "Кузовной ремонт",
 				list: [
-					'кузовные работы с устранением перекосов лонжеронов, проемов дверей',
+					'кузовные работы с&nbsp;устранением перекосов лонжеронов, проемов дверей',
 					'ремонт, восстановление и&nbsp;замена кузовных панелей',
 					'покраска элементов от локальной до полной ',
 					'полная покраска кузова в&nbsp;профессиональной сушильно - покрасочной камере',
@@ -318,10 +337,10 @@
 			out += '<span class="serv-table-head serv-table-row"><span class="serv-table-td">Виды работ</span></span>';
 			$.each(val.list, function(index, task){
 				out += '<span class="serv-table-row check">';
-				out += '<span class="serv-table-td">'+ task +'</span>';
+				out += '<span class="serv-table-td"><a href="#cheaper" class="modal-link">'+ task +'</a></span>';
 				out += '</span>';							
 			});
-			out += '<span class="serv-table-foot serv-table-row"><span class="serv-table-td"><a href="#cheaper" class="modal-link prace-link">Узнать цену</a></span></span>';
+			out += '<span class="serv-table-foot serv-table-row"><span class="serv-table-td"><a href="#cheaper" class="modal-link nowrap" data-title="'+val.title+'">Узнать цену</a></span></span>';
 			out += '</span>';
 			out += '</div>';
 			$('.services-list').append(out);

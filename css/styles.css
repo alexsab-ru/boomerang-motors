@@ -9100,6 +9100,35 @@ form small a:hover {
   padding: 80px 0 0px;
 }
 
+.services-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-head h2 {
+  font-size: 46px;
+  line-height: 1.2;
+}
+
+@media (max-width: 575.98px) {
+  .services-head h2 {
+    font-size: 36px;
+  }
+}
+
+.services-head .descr {
+  max-width: 800px;
+  font-size: 24px;
+  margin: 20px auto;
+  display: block;
+}
+
+@media (max-width: 575.98px) {
+  .services-head .descr {
+    font-size: 16px;
+  }
+}
+
 .services-item {
   width: 100%;
   position: relative;
@@ -9264,6 +9293,10 @@ form small a:hover {
   right: 0;
 }
 
+.serv-table-td a.modal-link {
+  color: #7D8083;
+}
+
 .serv-table-row:first-child .serv-table-td {
   padding-left: 0;
   min-height: 0;
@@ -9329,6 +9362,7 @@ form small a:hover {
   padding: 12px 0;
   display: block;
   background-color: #dc5c13;
+  text-transform: uppercase;
 }
 
 .serv-table-foot.serv-table-row a:hover {
@@ -9370,7 +9404,7 @@ form small a:hover {
 
 .modal h2, .modal h3 {
   text-align: center;
-  font-size: 30px;
+  font-size: 26px;
   color: #000;
   line-height: 1;
 }
@@ -9697,12 +9731,16 @@ form small a:hover {
   width: 100%;
 }
 
-.modal-link {
+.modal-link.nowrap {
   white-space: nowrap;
 }
 
-.modal h2, .modal p {
+.modal h2, .modal p, .modal h3 {
   text-align: center;
+}
+
+.modal h2:first-letter, .modal p:first-letter, .modal h3:first-letter {
+  text-transform: uppercase;
 }
 
 .modal p {
@@ -9795,6 +9833,65 @@ form small a:hover {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.replacement {
+  position: relative;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  height: 500px;
+}
+
+.replacement:after {
+  content: '';
+  display: block;
+  background: top right no-repeat url(../img/mitsubishi-lancerX-sideview.png);
+  background-size: initial;
+  top: 20%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 1;
+  background-position-x: calc(50% - 283px);
+}
+
+.replacement-head {
+  text-align: center;
+}
+
+.replacement-head h2 {
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+@media (max-width: 575.98px) {
+  .replacement-head h2 {
+    font-size: 36px;
+  }
+}
+
+.replacement-head .descr {
+  font-size: 24px;
+  margin: 20px 0;
+  display: block;
+}
+
+.replacement-form {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+}
+
+.replacement-form button, .replacement-form .btn {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 15px 50px;
 }
 
 /*==========  Desktop First  ==========*/

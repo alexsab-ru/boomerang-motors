@@ -1,0 +1,44 @@
+.replacement
+	position: relative
+	margin-top: 20px
+	padding-bottom: 50px
+	height: 500px
+	&:after
+		content: ''
+		display: block
+		// background: top left no-repeat url(../img/car.png)
+		background: top right no-repeat url(../img/mitsubishi-lancerX-sideview.png)
+		background-size: initial
+		// background-position: 0 0
+		top: 20%
+		width: 100%
+		height: 100%
+		position: absolute
+		z-index: -1
+		opacity: 1
+		background-position-x: calc(50% - 283px)
+	&-head
+		text-align: center
+		h2
+			font-size: 52px
+			line-height: 1.2
+			+media-breakpoint-down(xs)
+				font-size: 36px
+		.descr
+			font-size: 24px
+			margin: 20px 0
+			display: block
+	&-form
+		// max-width: 700px
+		width: 100%
+		margin: 0 auto
+		position: absolute
+		bottom: 0
+		button, .btn
+			// width: auto
+			display: inline-block
+			position: relative
+			left: 50%
+			transform: translateX(-50%)
+			padding: 15px 50px
+			// margin-bottom: 30px
