@@ -8844,6 +8844,10 @@ strong {
   width: 240px;
 }
 
+.header-logo small {
+  display: none;
+}
+
 .header-wrap {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9949,6 +9953,9 @@ p.oferta {
   }
   .header-logo img, .header-phones {
     margin-bottom: 15px;
+  }
+  .header-logo small {
+    display: initial;
   }
   .header-wrap {
     -webkit-box-orient: vertical;
