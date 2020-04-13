@@ -1,3 +1,30 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteBase /
+
+
+RewriteCond %{HTTP_HOST} ^(www\.)?avtobum63\.ru$ [NC]
+RewriteRule ^service/(.*)$ http://service.avtobum63.ru/$1 [L,NC,R=301]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?service\.avtobum63\.ru$ [NC]
+RewriteCond %{REQUEST_URI} !(jpe?g|gif|bmp|png|tiff|css|js)$ [NC]
+RewriteRule !service service%{REQUEST_URI} [NC,L]
+
+
+# send to https
+RewriteCond %{ENV:HTTPS} !on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# without www all domian - send to "without www"
+# RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# RewriteCond %{HTTP_HOST} ^www.service.avtobum63.ru$ [NC]
+# RewriteRule ^(.*)$ https://service.avtobum63.ru/$1 [R=301,L]
+
+</IfModule>
+
 <ifModule mod_expires.c>
 
 # Add correct content-type for fonts
@@ -40,6 +67,6 @@ ExpiresByType application/xhtml+xml "access plus 600 seconds"
 
 <ifModule mod_deflate.c>
 
-AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml application/json text/css text/javascript application/javascript application/x-javascript
 
 </ifModule>

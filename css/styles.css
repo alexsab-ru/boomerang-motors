@@ -8933,6 +8933,7 @@ strong {
 }
 
 .hero.cover {
+  background-image: url(../img/hero-2.jpg);
   z-index: 1;
   background-size: cover;
   background-position: center;
@@ -9567,7 +9568,7 @@ form small a:hover {
   font-size: 18px;
 }
 
-.maps .dealer-map, .maps .dealer-map2 {
+.maps .dealer-map {
   background-color: #ccc;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9580,12 +9581,7 @@ form small a:hover {
   cursor: pointer;
 }
 
-.maps .dealer .lazyload {
-  background-size: auto;
-  background-color: #ffffff;
-}
-
-.maps .dealer-map:before, .maps .dealer-map2:before {
+.maps .dealer-map:before {
   content: '';
   display: block;
   position: absolute;
@@ -9593,6 +9589,11 @@ form small a:hover {
   background-position: center;
   width: 100%;
   height: 100%;
+}
+
+.maps .dealer .lazyload {
+  background-size: auto;
+  background-color: #ffffff;
 }
 
 .loader {
@@ -9613,8 +9614,7 @@ form small a:hover {
   background-color: rgba(0, 0, 0, 0.55);
 }
 
-.loader:after,
-.loader:before {
+.loader:after, .loader:before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -9860,6 +9860,17 @@ p.oferta {
   height: 520px;
 }
 
+.replacement .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .replacement:after {
   content: '';
   display: block;
@@ -9885,7 +9896,7 @@ p.oferta {
 
 @media (max-width: 575.98px) {
   .replacement-head h2 {
-    font-size: 36px;
+    font-size: 33px;
   }
 }
 
@@ -9900,8 +9911,6 @@ p.oferta {
 }
 
 .replacement-form {
-  width: 100%;
-  margin: 0 auto;
   position: absolute;
   bottom: 0;
   display: -webkit-box;
@@ -9997,6 +10006,9 @@ p.oferta {
             flex-direction: column;
     padding: 15px 0;
   }
+  .hero {
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -10042,7 +10054,7 @@ p.oferta {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .maps .dealer-info, .maps .dealer-map, .maps .dealer-map2 {
+  .maps .dealer-info, .maps .dealer-map {
     width: 100%;
   }
   .cars-list {
@@ -10112,7 +10124,7 @@ p.oferta {
   .maps .dealer-info {
     padding-left: 5%;
   }
-  .maps .dealer-info, .maps .dealer-map, .maps .dealer-map2, #map1, #map2 {
+  .maps .dealer-info, .maps .dealer-map, #map1, #map2 {
     min-height: auto;
     height: 400px;
   }
@@ -10168,6 +10180,12 @@ p.oferta {
 }
 
 /*==========  Mobile First  ==========*/
+@media (min-width: 768px) {
+  .hero-text {
+    padding-right: 10px;
+  }
+}
+
 @media (min-width: 1200px) {
   body {
     font-size: 20px;

@@ -31,7 +31,7 @@
 			margin-bottom: 30px
 		&-time
 			font-size: 18px
-		&-map, &-map2
+		&-map
 			background-color: #ccc
 			background-repeat: no-repeat
 			background-size: cover
@@ -42,19 +42,17 @@
 			position: relative
 			overflow: hidden
 			cursor: pointer
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				background-size: cover
+				background-position: center
+				width: 100%
+				height: 100%
 		.lazyload
 			background-size: auto
 			background-color: #ffffff
-
-
-.maps .dealer-map:before, .maps .dealer-map2:before
-	content: ''
-	display: block
-	position: absolute
-	background-size: cover
-	background-position: center
-	width: 100%
-	height: 100%
 
 .loader 
 	position: absolute
@@ -69,30 +67,24 @@
 	transition: opacity .7s ease
 	opacity: 0
 	background-color: rgba(0, 0, 0, .55)
-
-
-.loader:after,
-.loader:before 
-	box-sizing: border-box
-
-
-.loader.is-active 
-	top: 0
-	opacity: 1
-
-
-.loader-default:after 
-	position: absolute
-	top: calc(50% - 24px)
-	left: calc(50% - 24px)
-	width: 48px
-	height: 48px
-	content: ''
-	-webkit-animation: rotation 1s linear infinite
-	animation: rotation 1s linear infinite
-	border: solid 8px #ffffff
-	border-left-color: transparent
-	border-radius: 50%
+	&:after,
+	&:before 
+		box-sizing: border-box
+	&.is-active 
+		top: 0
+		opacity: 1
+	&-default:after 
+		position: absolute
+		top: calc(50% - 24px)
+		left: calc(50% - 24px)
+		width: 48px
+		height: 48px
+		content: ''
+		-webkit-animation: rotation 1s linear infinite
+		animation: rotation 1s linear infinite
+		border: solid 8px #ffffff
+		border-left-color: transparent
+		border-radius: 50%
 
 #map1, #map2
 	position: relative

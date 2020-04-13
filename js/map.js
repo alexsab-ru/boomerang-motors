@@ -2,15 +2,29 @@ $(function() {
 
     let maps = [
             {
-                parent: '.dealer-map',
+                parent: '#dealer-map1',
                 id: "map1",
                 position: [53.193542, 50.292163],
                 zoom: 17,
                 balloonContentHeader: 'Сервисный центр<br>БУМЕРАНГ-АВТО',
                 balloonContentBody: '<a href="tel:88469228872" class="dealer-phone">☎️ 8 (846) 922-88-72</a><br>\
                     <a href="mailto:service@avtobum63.ru" class="dealer-email">📩 service@avtobum63.ru</a><br><br> \
-                    <a href="https://yandex.ru/maps/?z=17&ll=50.292163,53.19354199999777&l=map&rtext=~53.193542,50.292163&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Как добраться</a><br>',
+                    пр. Кирова, 10<br>\
+                    <a href="https://yandex.ru/maps/?z=17&ll=50.292163,53.19354199999777&l=map&rtext=~53.193542,50.292163&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Проложить маршрут</a><br>',
                 balloonContentFooter: 'ежедневно: 8:00 — 20:00',
+                hintContent: 'Сервисный центр<br>БУМЕРАНГ-АВТО'
+            },
+            {
+                parent: '#dealer-map2',
+                id: "map2",
+                position: [53.249726, 50.355324],
+                zoom: 17,
+                balloonContentHeader: 'Сервисный центр<br>БУМЕРАНГ-АВТО',
+                balloonContentBody: '<a href="tel:88469228872" class="dealer-phone">☎️ 8 (846) 922-88-72</a><br>\
+                    <a href="mailto:service@avtobum63.ru" class="dealer-email">📩 service@avtobum63.ru</a><br><br> \
+                    Аэропортовское шоссе, 1<br>\
+                    <a href="https://yandex.ru/maps/?z=17&ll=50.35532399999995,53.24972599999765&l=map&rtext=~53.249726,50.355324&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Проложить маршрут</a><br>',
+                balloonContentFooter: 'ежедневно: 9:00 — 18:00',
                 hintContent: 'Сервисный центр<br>БУМЕРАНГ-АВТО'
             },
         ],

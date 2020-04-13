@@ -40,7 +40,8 @@
 	.header-wrap
 		flex-direction: column
 		padding: 15px 0
-
+	.hero
+		padding-top: 0
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -66,7 +67,7 @@
 		animation-iteration-count: inherit
 	.maps .dealer, .maps .dealer:nth-child(even)
 		flex-direction: column
-	.maps .dealer-info, .maps .dealer-map, .maps .dealer-map2
+	.maps .dealer-info, .maps .dealer-map
 		width: 100%
 	.cars-list
 		justify-content: space-around
@@ -110,7 +111,7 @@
 		font-size: 20px
 	.maps .dealer-info
 		padding-left: 5%
-	.maps .dealer-info, .maps .dealer-map, .maps .dealer-map2, #map1, #map2
+	.maps .dealer-info, .maps .dealer-map, #map1, #map2
 		min-height: auto
 		height: 400px
 	.maps .dealer-info h2
@@ -154,6 +155,9 @@
 
 // ≤768px
 +media-breakpoint-up(md)
+	.hero-text
+		padding-right: 10px
+
 
 // ≤992px
 +media-breakpoint-up(lg)

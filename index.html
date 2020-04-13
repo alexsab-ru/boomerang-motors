@@ -27,7 +27,7 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/styles.css?202004101959">
+	<link rel="stylesheet" href="css/styles.css?202004131054">
 
 </head>
 
@@ -59,7 +59,7 @@
 					<div class="phone phone-three">
 						<img src="img/time.svg" alt="Телефон">
 						<span class="phone-info">
-							<a href="javascript:">8:00-20:00</a>
+							<a href="#cheaper" class="modal-link" data-title="Хотите в другое время?">9:00-18:00</a>
 							<small>Ежедневно</small>
 						</span>							
 					</div>
@@ -76,7 +76,7 @@
 	</header>
 	<!-- /.header -->
 
-	<div class="hero cover" style="background-image: url(img/hero-2.jpg);">
+	<div class="hero cover">
 		<!-- <div id="bgndVideo" class="player"
 		data-property="{
 		videoURL: 'https://www.youtube.com/embed/6Tc5XFR7xz4',
@@ -126,7 +126,7 @@
 	<main>
 		
 		<section class="replacement">
-			<div class="container-flued">
+			<div class="container">
 				<div class="replacement-head">
 					<h2>Предоставляем подменный авто</h2>
 					<span class="descr">на время ремонта вашего<sup>*</sup></span>
@@ -194,11 +194,28 @@
 						<a href="mailto:service@avtobum63.ru" class="dealer-email">service@avtobum63.ru</a>	
 					</span>
 					<span class="dealer-address">пр. Кирова, 10</span>
-					<sapn class="dealer-time">ежедневно: 8:00 — 20:00</sapn>
+					<sapn class="dealer-time">ежедневно: 9:00 — 18:00</sapn>
 				</span>
-				<span class="dealer-map lazyload" style="background-image: url(img/loading-1.gif);" data-srcbefore="img/map.jpg">
+				<span id="dealer-map1" class="dealer-map lazyload" style="background-image: url(img/loading-1.gif);" data-srcbefore="img/map.jpg">
 					<span class="loader loader-default"></span>
 					<span id="map1"></span>
+				</span>
+			</div>
+			<!-- /.dealer -->
+
+			<div class="dealer">
+				<span class="dealer-info">
+					<h2>Сервисный центр<br>БУМЕРАНГ-АВТО</h2>
+					<span class="dealer-contacts">
+						<a href="tel:88469228872" class="dealer-phone">8 (846) 922-88-72</a>
+						<a href="mailto:service@avtobum63.ru" class="dealer-email">service@avtobum63.ru</a>	
+					</span>
+					<span class="dealer-address">Аэропортовское шоссе 1</span>
+					<sapn class="dealer-time">ежедневно: 9:00 — 18:00</sapn>
+				</span>
+				<span id="dealer-map2" class="dealer-map lazyload" style="background-image: url(img/loading-1.gif);" data-srcbefore="img/map2.jpg">
+					<span class="loader loader-default"></span>
+					<span id="map2"></span>
 				</span>
 			</div>
 			<!-- /.dealer -->
@@ -289,11 +306,24 @@
 
 	<!-- /MODALS -->
 
-	<script src="js/scripts.min.js?202004101959"></script>
+	<script src="js/scripts.min.js?202004131054"></script>
 
 	<script>
 		
-		var services = [ {
+		var services = [ 
+			{ 
+				title: "Кузовной ремонт",
+				list: [
+					'кузовные работы с&nbsp;устранением перекосов лонжеронов, проемов дверей',
+					'ремонт, восстановление и&nbsp;замена кузовных панелей',
+					'покраска элементов от локальной до полной ',
+					'полная покраска кузова в&nbsp;профессиональной сушильно - покрасочной камере',
+					'ремонт бамперов',
+					'полировка и&nbsp;восстановление ЛКП',
+					'замена и&nbsp;установка автостекол',
+				],
+			},
+			{
 				title: "Механический ремонт",
 				list: [
 					'ремонт бензиновых и&nbsp;дизельных двигателей',
@@ -324,18 +354,6 @@
 					'ремонт стартеров и&nbsp;генераторов',
 					'услуги автоэлектрика',
 					'установка доп. оборудования',
-				],
-			},
-			{ 
-				title: "Кузовной ремонт",
-				list: [
-					'кузовные работы с&nbsp;устранением перекосов лонжеронов, проемов дверей',
-					'ремонт, восстановление и&nbsp;замена кузовных панелей',
-					'покраска элементов от локальной до полной ',
-					'полная покраска кузова в&nbsp;профессиональной сушильно - покрасочной камере',
-					'ремонт бамперов',
-					'полировка и&nbsp;восстановление ЛКП',
-					'замена и&nbsp;установка автостекол',
 				],
 			}
 		];
