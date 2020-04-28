@@ -8961,13 +8961,17 @@ strong {
 }
 
 .hero-form {
-  background-color: #fff;
+  background-color: #ffffffcc;
   color: #000;
   max-width: 400px;
   width: 100%;
   height: auto;
   padding: 34px;
   opacity: 0;
+}
+
+.hero-form input {
+  background-color: #ffffff99;
 }
 
 .hero-form button {
@@ -10106,9 +10110,9 @@ p.oferta {
     font-size: 22px;
   }
   .hero, .hero.cover {
-    background-position: top -270px center;
+    background-position: top -260px center;
     background-repeat: no-repeat;
-    background-color: #f7f7f9;
+    background-color: #86745e;
     min-height: 0;
     height: auto;
   }
