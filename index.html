@@ -288,7 +288,7 @@
 		<h2></h2>
 		<h3></h3>
 		<p>Оставьте свой номер телефона и наш менеджер свяжется с Вами</p>
-		<form method="POST">
+		<form method="POST" enctype="multipart/form-data">
 			<!-- Hidden Required Fields -->
 			<input type="hidden" name="project_name" value="Service Avtobum">
 			<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
@@ -298,6 +298,7 @@
 			<input type="text" placeholder="Ваше имя*" name="Имя" required>
 			<input type="tel" placeholder="8 (999) 999-99-99*" name="Телефон" required>
 			<input type="email" name="Email" placeholder="mail@example.com">
+			<div class="file-upload" id="file-upload"></div>
 			<button type="submit" class="btn">Узнать цену</button>
 			<small>Нажимая на кнопку "Узнать цену", я даю согласие на <a href="#popup">обработку персональных данных</a></small>
 		</form>

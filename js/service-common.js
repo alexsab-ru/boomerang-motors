@@ -14,6 +14,27 @@ jQuery(function($) {
 		}
 	});
 
+	$('#file-upload').dropzone({
+		url: 'upload.php',
+		//parallelUploads: 1,
+		//thumbnailHeight: 120,
+		//thumbnailWidth: 120,
+		maxFiles: 1,
+		maxFilesize: 1,
+		dictMaxFilesExceeded: 'Привышен лимит изображений',
+		init: function(){
+			$(this.element).html(this.options.dictDefaultMessage);
+		},
+		dictDefaultMessage: 'Кликните или перетащите файл сюда',
+		//filesizeBase: 1000,
+    	//uploadMultiple: true,
+    	acceptedFiles: '.jpg,.jpeg,.png',
+    	success: function(file, response){
+    		// console.log(file);
+    		console.log(response);
+    	}
+	});
+
 	//E-mail Ajax Send
 	$("form").submit(function() { //Change
 		var th = $(this);
