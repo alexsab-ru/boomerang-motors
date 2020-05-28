@@ -8916,11 +8916,19 @@ strong {
 }
 
 .hero {
-  min-height: 100vh;
+  min-height: 700px;
+  height: 100vh;
+  max-height: 900px;
   padding-top: 97px;
   position: relative;
   padding-bottom: 5vmax;
   color: #fff;
+}
+
+@media (min-width: 2049px) {
+  .hero {
+    max-height: 1280px;
+  }
 }
 
 .hero:before {
@@ -9508,6 +9516,10 @@ form small a:hover {
   padding: 50px 0 0;
 }
 
+.maps small {
+  display: block;
+}
+
 .maps .dealer {
   background-color: #F6F7F8;
   display: -webkit-box;
@@ -9713,8 +9725,8 @@ form small a:hover {
 
 .footer img.logo {
   max-width: 240px;
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
 }
 
 .top {
@@ -9871,6 +9883,12 @@ p.oferta {
   height: 540px;
 }
 
+@media (min-width: 1441px) {
+  .replacement {
+    margin-top: 40px;
+  }
+}
+
 .replacement .container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10005,9 +10023,6 @@ p.oferta {
   }
   .header-logo img, .header-phones {
     margin-bottom: 15px;
-  }
-  .header-logo small {
-    display: initial;
   }
   .header-wrap {
     -webkit-box-orient: vertical;
