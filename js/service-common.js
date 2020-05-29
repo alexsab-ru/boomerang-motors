@@ -16,22 +16,40 @@ jQuery(function($) {
 
 	$('#file-upload').dropzone({
 		url: 'upload.php',
-		//parallelUploads: 1,
+		parallelUploads: 1,
 		//thumbnailHeight: 120,
 		//thumbnailWidth: 120,
-		maxFiles: 1,
-		maxFilesize: 1,
+		//filesizeBase: 1000,
+    	//uploadMultiple: true,
+		maxFiles: 10,
+		maxFilesize: 10,
 		dictMaxFilesExceeded: 'Привышен лимит изображений',
 		init: function(){
 			$(this.element).html(this.options.dictDefaultMessage);
 		},
-		dictDefaultMessage: 'Кликните или перетащите файл сюда',
-		//filesizeBase: 1000,
-    	//uploadMultiple: true,
+		dictDefaultMessage: '<div class="dz-message needsclick">Кликните или перетащите файл сюда</div>',
     	acceptedFiles: '.jpg,.jpeg,.png',
+    	thumbnail: function(file, dataUrl) {
+    		if (file.previewElement) {
+    			file.previewElement.classList.remove("dz-file-preview");
+    			var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+    			for (var i = 0; i < images.length; i++) {
+    				var thumbnailElement = images[i];
+    				thumbnailElement.alt = file.name;
+    				thumbnailElement.src = dataUrl;
+    				url = dataUrl;
+    			}
+    			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+    		}
+    	},
     	success: function(file, response){
-    		// console.log(file);
-    		console.log(response);
+    		var res = JSON.parse(response);
+    		if (res.answer == 'error') {
+    			$('.error-message').append(res.error);
+    		}else{
+    			this.defaultOptions.success(file);
+    		}
+    		console.log(res.answer);
     	}
 	});
 
