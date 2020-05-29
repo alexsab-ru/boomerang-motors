@@ -10377,6 +10377,16 @@ p.oferta {
   position: relative;
 }
 
+.file-upload {
+  border: 2px #208fce solid;
+  border-radius: 10px;
+}
+
+.file-upload .dz-message {
+  font-size: 16px;
+  margin-top: 40px;
+}
+
 /*==========  Desktop First  ==========*/
 @media (max-width: 1199.98px) {
   .car {

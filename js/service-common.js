@@ -27,7 +27,7 @@ jQuery(function($) {
 		init: function(){
 			$(this.element).html(this.options.dictDefaultMessage);
 		},
-		dictDefaultMessage: '<div class="dz-message needsclick">Кликните или перетащите файл сюда</div>',
+		dictDefaultMessage: '<div class="dz-message needsclick">Кликните или перетащите файлы сюда</div>',
     	acceptedFiles: '.jpg,.jpeg,.png',
     	thumbnail: function(file, dataUrl) {
     		if (file.previewElement) {
