@@ -1,9 +1,15 @@
 <?php
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
 
 if (!empty($_FILES)) {
 	$path = __DIR__ . '/uploads/';
+	
+	if (!file_exists($path)) {
+		mkdir($path, 0755, true);
+	}
 
 	if (uploadFiles('file', $path)) {
 		$res = ['answer' => 'Файлы успешно загружены'];
@@ -24,6 +30,11 @@ function uploadFiles($name, $path){
 	$ext = strtolower(preg_replace('#.+\.([a-z]+)$#i', '$1', $_FILES[$name]['name']));
 	$allow_ext = ['jpg','jpeg','png'];
 
+	if (!in_array($ext, $allow_ext)) {
+		$res = ['answer' => 'error', 'error' => 'Разрешены к загрузке файлы: .jpg, .jpeg, .png'];
+		exit(json_encode($res));
+	}
+
 	if ($_FILES[$name]['size'] > 10485760) {
 		$res = ['answer' => 'error', 'error' => 'Ошибка! Максимальный размер файлов - 10 Мб'];
 		exit(json_encode($res));
@@ -31,11 +42,6 @@ function uploadFiles($name, $path){
 
 	if ($_FILES[$name]['error']) {
 		$res = ['answer' => 'error', 'error' => 'Ошибка! Возможно один из файлов слишком большой'];
-		exit(json_encode($res));
-	}
-
-	if (!in_array($ext, $allow_ext)) {
-		$res = ['answer' => 'error', 'error' => 'Разрешены к загрузке файлы: .jpg, .jpeg, .png'];
 		exit(json_encode($res));
 	}
 

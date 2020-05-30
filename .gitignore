@@ -1,5 +1,6 @@
-
+.alexsab
 *.php
 !upload.php
 phpmailer
 sftp-config.json
+vendor

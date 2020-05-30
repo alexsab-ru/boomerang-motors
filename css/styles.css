@@ -27,9 +27,9 @@
 }
 
 /*!
- * Bootstrap Reboot v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
+ * Bootstrap Reboot v4.5.0 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
  */
@@ -185,6 +185,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
+  -ms-overflow-style: scrollbar;
 }
 
 figure {
@@ -252,6 +253,10 @@ select {
   text-transform: none;
 }
 
+[role="button"] {
+  cursor: pointer;
+}
+
 select {
   word-wrap: normal;
 }
@@ -283,13 +288,6 @@ input[type="checkbox"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
-}
-
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox;
 }
 
 textarea {
@@ -357,9 +355,9 @@ template {
 }
 
 /*!
- * Bootstrap Grid v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
+ * Bootstrap Grid v4.5.0 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 html {
@@ -482,6 +480,7 @@ html {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  min-width: 0;
   max-width: 100%;
 }
 
@@ -796,6 +795,7 @@ html {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    min-width: 0;
     max-width: 100%;
   }
   .row-cols-sm-1 > * {
@@ -1069,6 +1069,7 @@ html {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    min-width: 0;
     max-width: 100%;
   }
   .row-cols-md-1 > * {
@@ -1342,6 +1343,7 @@ html {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    min-width: 0;
     max-width: 100%;
   }
   .row-cols-lg-1 > * {
@@ -1615,6 +1617,7 @@ html {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    min-width: 0;
     max-width: 100%;
   }
   .row-cols-xl-1 > * {
@@ -8721,6 +8724,10 @@ img.mfp-img {
   }
 }
 
+/*
+ * The MIT License
+ * Copyright (c) 2012 Matias Meno <m@tias.me>
+ */
 @-webkit-keyframes passing-through {
   0% {
     opacity: 0;
@@ -8829,7 +8836,7 @@ img.mfp-img {
   }
 }
 
-.file-upload {
+.dropzone {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-height: 150px;
@@ -8838,45 +8845,55 @@ img.mfp-img {
   padding: 20px 20px;
 }
 
-.file-upload * {
+.dropzone * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.file-upload.dz-clickable {
+.dropzone.dz-clickable {
   cursor: pointer;
 }
 
-.file-upload.dz-clickable * {
+.dropzone.dz-clickable * {
   cursor: default;
 }
 
-.file-upload.dz-clickable .dz-message {
+.dropzone.dz-clickable .dz-message {
   cursor: pointer;
 }
 
-.file-upload.dz-clickable .dz-message * {
+.dropzone.dz-clickable .dz-message * {
   cursor: pointer;
 }
 
-.file-upload.dz-started .dz-message {
+.dropzone.dz-started .dz-message {
   display: none;
 }
 
-.file-upload.dz-drag-hover {
+.dropzone.dz-drag-hover {
   border-style: solid;
 }
 
-.file-upload.dz-drag-hover .dz-message {
+.dropzone.dz-drag-hover .dz-message {
   opacity: 0.5;
 }
 
-.file-upload .dz-message {
+.dropzone .dz-message {
   text-align: center;
   margin: 2em 0;
 }
 
-.file-upload .dz-preview {
+.dropzone .dz-message .dz-button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.dropzone .dz-preview {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -8884,15 +8901,15 @@ img.mfp-img {
   min-height: 100px;
 }
 
-.file-upload .dz-preview:hover {
+.dropzone .dz-preview:hover {
   z-index: 1000;
 }
 
-.file-upload .dz-preview:hover .dz-details {
+.dropzone .dz-preview:hover .dz-details {
   opacity: 1;
 }
 
-.file-upload .dz-preview.dz-file-preview .dz-image {
+.dropzone .dz-preview.dz-file-preview .dz-image {
   border-radius: 20px;
   background: #999;
   background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
@@ -8900,21 +8917,21 @@ img.mfp-img {
   background: linear-gradient(to bottom, #eee, #ddd);
 }
 
-.file-upload .dz-preview.dz-file-preview .dz-details {
+.dropzone .dz-preview.dz-file-preview .dz-details {
   opacity: 1;
 }
 
-.file-upload .dz-preview.dz-image-preview {
+.dropzone .dz-preview.dz-image-preview {
   background: white;
 }
 
-.file-upload .dz-preview.dz-image-preview .dz-details {
+.dropzone .dz-preview.dz-image-preview .dz-details {
   -webkit-transition: opacity 0.2s linear;
   -o-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 
-.file-upload .dz-preview .dz-remove {
+.dropzone .dz-preview .dz-remove {
   font-size: 14px;
   text-align: center;
   display: block;
@@ -8922,15 +8939,15 @@ img.mfp-img {
   border: none;
 }
 
-.file-upload .dz-preview .dz-remove:hover {
+.dropzone .dz-preview .dz-remove:hover {
   text-decoration: underline;
 }
 
-.file-upload .dz-preview:hover .dz-details {
+.dropzone .dz-preview:hover .dz-details {
   opacity: 1;
 }
 
-.file-upload .dz-preview .dz-details {
+.dropzone .dz-preview .dz-details {
   z-index: 20;
   position: absolute;
   top: 0;
@@ -8945,43 +8962,43 @@ img.mfp-img {
   line-height: 150%;
 }
 
-.file-upload .dz-preview .dz-details .dz-size {
+.dropzone .dz-preview .dz-details .dz-size {
   margin-bottom: 1em;
   font-size: 16px;
 }
 
-.file-upload .dz-preview .dz-details .dz-filename {
+.dropzone .dz-preview .dz-details .dz-filename {
   white-space: nowrap;
 }
 
-.file-upload .dz-preview .dz-details .dz-filename:hover span {
+.dropzone .dz-preview .dz-details .dz-filename:hover span {
   border: 1px solid rgba(200, 200, 200, 0.8);
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.file-upload .dz-preview .dz-details .dz-filename:not(:hover) {
+.dropzone .dz-preview .dz-details .dz-filename:not(:hover) {
   overflow: hidden;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
 }
 
-.file-upload .dz-preview .dz-details .dz-filename:not(:hover) span {
+.dropzone .dz-preview .dz-details .dz-filename:not(:hover) span {
   border: 1px solid transparent;
 }
 
-.file-upload .dz-preview .dz-details .dz-filename span {
+.dropzone .dz-preview .dz-details .dz-filename span {
   background-color: rgba(255, 255, 255, 0.4);
   padding: 0 0.4em;
   border-radius: 3px;
 }
 
-.file-upload .dz-preview .dz-details .dz-size span {
+.dropzone .dz-preview .dz-details .dz-size span {
   background-color: rgba(255, 255, 255, 0.4);
   padding: 0 0.4em;
   border-radius: 3px;
 }
 
-.file-upload .dz-preview:hover .dz-image img {
+.dropzone .dz-preview:hover .dz-image img {
   -webkit-transform: scale(1.05, 1.05);
   -ms-transform: scale(1.05, 1.05);
   transform: scale(1.05, 1.05);
@@ -8989,7 +9006,7 @@ img.mfp-img {
   filter: blur(8px);
 }
 
-.file-upload .dz-preview .dz-image {
+.dropzone .dz-preview .dz-image {
   border-radius: 20px;
   overflow: hidden;
   width: 120px;
@@ -8999,22 +9016,22 @@ img.mfp-img {
   z-index: 10;
 }
 
-.file-upload .dz-preview .dz-image img {
+.dropzone .dz-preview .dz-image img {
   display: block;
 }
 
-.file-upload .dz-preview.dz-success .dz-success-mark {
+.dropzone .dz-preview.dz-success .dz-success-mark {
   -webkit-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
   animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.file-upload .dz-preview.dz-error .dz-error-mark {
+.dropzone .dz-preview.dz-error .dz-error-mark {
   opacity: 1;
   -webkit-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
   animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.file-upload .dz-preview .dz-success-mark, .file-upload .dz-preview .dz-error-mark {
+.dropzone .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark {
   pointer-events: none;
   opacity: 0;
   z-index: 500;
@@ -9026,32 +9043,32 @@ img.mfp-img {
   margin-top: -27px;
 }
 
-.file-upload .dz-preview .dz-success-mark svg, .file-upload .dz-preview .dz-error-mark svg {
+.dropzone .dz-preview .dz-success-mark svg, .dropzone .dz-preview .dz-error-mark svg {
   display: block;
   width: 54px;
   height: 54px;
 }
 
-.file-upload .dz-preview.dz-processing .dz-progress {
+.dropzone .dz-preview.dz-processing .dz-progress {
   opacity: 1;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
-.file-upload .dz-preview.dz-complete .dz-progress {
+.dropzone .dz-preview.dz-complete .dz-progress {
   opacity: 0;
   -webkit-transition: opacity 0.4s ease-in;
   -o-transition: opacity 0.4s ease-in;
   transition: opacity 0.4s ease-in;
 }
 
-.file-upload .dz-preview:not(.dz-processing) .dz-progress {
+.dropzone .dz-preview:not(.dz-processing) .dz-progress {
   -webkit-animation: pulse 6s ease infinite;
   animation: pulse 6s ease infinite;
 }
 
-.file-upload .dz-preview .dz-progress {
+.dropzone .dz-preview .dz-progress {
   opacity: 1;
   z-index: 1000;
   pointer-events: none;
@@ -9068,7 +9085,7 @@ img.mfp-img {
   overflow: hidden;
 }
 
-.file-upload .dz-preview .dz-progress .dz-upload {
+.dropzone .dz-preview .dz-progress .dz-upload {
   background: #333;
   background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#444));
   background: -o-linear-gradient(top, #666, #444);
@@ -9083,16 +9100,16 @@ img.mfp-img {
   transition: width 300ms ease-in-out;
 }
 
-.file-upload .dz-preview.dz-error .dz-error-message {
+.dropzone .dz-preview.dz-error .dz-error-message {
   display: block;
 }
 
-.file-upload .dz-preview.dz-error:hover .dz-error-message {
+.dropzone .dz-preview.dz-error:hover .dz-error-message {
   opacity: 1;
   pointer-events: auto;
 }
 
-.file-upload .dz-preview .dz-error-message {
+.dropzone .dz-preview .dz-error-message {
   pointer-events: none;
   z-index: 1000;
   position: absolute;
@@ -9115,7 +9132,7 @@ img.mfp-img {
   color: white;
 }
 
-.file-upload .dz-preview .dz-error-message:after {
+.dropzone .dz-preview .dz-error-message:after {
   content: '';
   position: absolute;
   top: -6px;
@@ -9320,7 +9337,6 @@ strong {
 
 .hero {
   min-height: 700px;
-  height: 100vh;
   max-height: 900px;
   padding-top: 97px;
   position: relative;
@@ -10060,7 +10076,7 @@ form small a:hover {
   border-radius: 50%;
 }
 
-#map1, #map2 {
+.map-here {
   position: relative;
   z-index: 7;
   width: 100%;
@@ -10378,13 +10394,14 @@ p.oferta {
 }
 
 .file-upload {
-  border: 2px #208fce solid;
-  border-radius: 10px;
+  border: 2px #208fce dashed;
+  min-height: auto;
 }
 
 .file-upload .dz-message {
   font-size: 16px;
-  margin-top: 40px;
+  margin: 40px 10px;
+  text-align: center;
 }
 
 /*==========  Desktop First  ==========*/

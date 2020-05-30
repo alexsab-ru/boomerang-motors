@@ -70,11 +70,13 @@ b, strong
 @import sections/replacement
 
 .file-upload
-	border: 2px $accent solid
-	border-radius: 10px
+	border: 2px $accent dashed
+	// border-radius: 10px
+	min-height: auto
 
-.file-upload .dz-message
-	font-size: 16px
-	margin-top: 40px
+	.dz-message
+		font-size: 16px
+		margin: 40px 10px
+		text-align: center
 
 @import "media"

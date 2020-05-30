@@ -14,7 +14,7 @@ jQuery(function($) {
 		}
 	});
 
-	$('#file-upload').dropzone({
+	var dropzone = new Dropzone('#file-upload', {
 		url: 'upload.php',
 		parallelUploads: 1,
 		//thumbnailHeight: 120,
@@ -27,7 +27,7 @@ jQuery(function($) {
 		init: function(){
 			$(this.element).html(this.options.dictDefaultMessage);
 		},
-		dictDefaultMessage: '<div class="dz-message needsclick">Кликните или перетащите файлы сюда</div>',
+		dictDefaultMessage: '<div class="dz-message needsclick">Вы можете приложить фотографию</div>',
     	acceptedFiles: '.jpg,.jpeg,.png',
     	thumbnail: function(file, dataUrl) {
     		if (file.previewElement) {
@@ -74,11 +74,12 @@ jQuery(function($) {
 						type: 'inline'
 					}
 				});
-				if(data == 'OK'){
+				if(data == 'OK') {
+					dropzone.removeAllFiles(true);
 					th.trigger("reset");
 				}
 				btnSubmit.removeAttr("disabled");
-			}, 1000);
+			}, 100);
 		}).fail(function() {
 			setTimeout(function() {
 				$.magnificPopup.close();
@@ -89,7 +90,7 @@ jQuery(function($) {
 					}
 				});
 				btnSubmit.removeAttr("disabled");
-			}, 1000);
+			}, 100);
 		});
 		return false;
 	});
@@ -138,7 +139,7 @@ jQuery(function($) {
 
 	//при клике на заголовок ТО
 	/* */
-	$('.services-item__title').on('click', function(){
+	$('.services-item__title').on('click', function() {
 		var th = $(this);
 		var id = th.attr('id');
 		var parent = th.parent();
@@ -180,12 +181,15 @@ jQuery(function($) {
 	});
 	/**/
 
-	$('a[href="#cheaper"]').on('click', function(){
+	$('a[href="#cheaper"]').on('click', function() {
 		var servName = $(this).data('title');
-		if(servName) 
+		if(servName) {
 			$('#cheaper').find('h3').text(servName);
-		else
+			$('#cheaper').find('.the-service').val(servName);
+		} else {
 			$('#cheaper').find('h3').text($(this).text());
+			$('#cheaper').find('.the-service').val($(this).text());
+		}
 
 	});
 

@@ -108,12 +108,10 @@
 					<p>Оставьте свой номер телефона, и&nbsp;мы&nbsp;перезвоним Вам</p>
 					<form method="POST">
 						<!-- Hidden Required Fields -->
-						<input type="hidden" name="project_name" value="Service Avtobum">
-						<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
-						<input type="hidden" name="form_subject" value="Форма из баннера">
+						<input type="hidden" name="Форма" value="Форма из баннера">
 						<!-- END Hidden Required Fields -->
 
-						<input type="text" name="Имя" placeholder="Ваше имя*" required>
+						<input type="text" name="Имя" placeholder="Ваше имя">
 						<input type="tel" name="Телефон" placeholder="8 (999) 999-99-99*" required>
 						<input type="email" name="Email" placeholder="mail@example.com">
 						<button type="submit" class="btn">Записаться</button>
@@ -168,12 +166,10 @@
 				<div class="offer-form">
 					<form method="POST">
 						<!-- Hidden Required Fields -->
-						<input type="hidden" name="project_name" value="Service Avtobum">
-						<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
-						<input type="hidden" name="form_subject" value="Форма - Хочу дешевле">
+						<input type="hidden" name="Форма" value="Форма - Есть вопросы">
 						<!-- END Hidden Required Fields -->
 
-						<input type="text" placeholder="Ваше имя*" name="Имя" required>
+						<input type="text" placeholder="Ваше имя" name="Имя" >
 						<input type="tel" placeholder="8 (999) 999-99-99*" name="Телефон" required>
 						<input type="email" name="Email" placeholder="mail@example.com">
 						<textarea name="Комментарий" placeholder="Комментарии"></textarea>
@@ -203,7 +199,7 @@
 				</span>
 				<span id="dealer-map1" class="dealer-map lazyload" style="background-image: url(img/loading-1.gif);" data-srcbefore="img/map.jpg">
 					<span class="loader loader-default"></span>
-					<span id="map1"></span>
+					<span id="map1" class="map-here"></span>
 				</span>
 			</div>
 			<!-- /.dealer -->
@@ -221,11 +217,61 @@
 				</span>
 				<span id="dealer-map2" class="dealer-map lazyload" style="background-image: url(img/loading-1.gif);" data-srcbefore="img/map2.jpg">
 					<span class="loader loader-default"></span>
-					<span id="map2"></span>
+					<span id="map2" class="map-here"></span>
 				</span>
 			</div>
 			<!-- /.dealer -->
 
+			<script>
+				let maps = [
+					{
+						parent: '#dealer-map1',
+						id: "map1",
+						position: [53.193708, 50.289319],
+						zoom: 17,
+						path: [[
+							// Указываем координаты вершин ломаной.
+							[53.194531, 50.291925],
+							[53.193554, 50.289490],
+							[53.193708, 50.289319]
+						], {
+							// Описываем свойства геообъекта.
+							// Содержимое балуна.
+							balloonContent: "Заезд со стороны пр.Кирова"
+						}, {
+							// Задаем опции геообъекта.
+							// Отключаем кнопку закрытия балуна.
+							balloonCloseButton: false,
+							// Цвет линии.
+							strokeColor: "#000000",
+							// Ширина линии.
+							strokeWidth: 4,
+							// Коэффициент прозрачности.
+							strokeOpacity: 0.5
+						}],
+						balloonContentHeader: 'Сервисный центр<br>БУМЕРАНГ-АВТО',
+						balloonContentBody: '<a href="tel:88469228872" class="dealer-phone">☎️ 8 (846) 922-88-72</a><br>\
+							<a href="mailto:service@avtobum63.ru" class="dealer-email">📩 service@avtobum63.ru</a><br><br> \
+							пр. Кирова, 10<br>\
+							<a href="https://yandex.ru/maps/?z=17&ll=50.289318999999956,53.19370799999778&l=map&rtext=~53.193708,50.289319&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Проложить маршрут</a><br>',
+						balloonContentFooter: 'ежедневно: 8:00 — 20:00',
+						hintContent: 'Сервисный центр<br>БУМЕРАНГ-АВТО'
+					},
+					{
+						parent: '#dealer-map2',
+						id: "map2",
+						position: [53.249726, 50.355324],
+						zoom: 17,
+						balloonContentHeader: 'Сервисный центр<br>БУМЕРАНГ-АВТО',
+						balloonContentBody: '<a href="tel:88469228872" class="dealer-phone">☎️ 8 (846) 922-88-72</a><br>\
+							<a href="mailto:service@avtobum63.ru" class="dealer-email">📩 service@avtobum63.ru</a><br><br> \
+							Аэропортовское шоссе, 1<br>\
+							<a href="https://yandex.ru/maps/?z=17&ll=50.35532399999995,53.24972599999765&l=map&rtext=~53.249726,50.355324&origin=jsapi_2_1_76&from=api-maps"  target="_blank" class="dealer-phone">📍 Проложить маршрут</a><br>',
+						balloonContentFooter: 'ежедневно: 9:00 — 18:00',
+						hintContent: 'Сервисный центр<br>БУМЕРАНГ-АВТО'
+					},
+				];
+			</script>
 
 		</div>
 		<!-- /.maps rand -->
@@ -271,12 +317,10 @@
 		<p>Можем предложить специальные условия именно для вас!</p>
 		<form method="POST">
 			<!-- Hidden Required Fields -->
-			<input type="hidden" name="project_name" value="Service Avtobum">
-			<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
-			<input type="hidden" name="form_subject" value="Форма - Заказ обратного звонка">
+			<input type="hidden" name="Форма" value="Форма - Заказ обратного звонка">
 			<!-- END Hidden Required Fields -->
 
-			<input type="text" placeholder="Ваше имя*" name="Имя" required>
+			<input type="text" placeholder="Ваше имя" name="Имя" >
 			<input type="tel" placeholder="8 (999) 999-99-99*" name="Телефон" required>
 			<input type="email" name="Email" placeholder="mail@example.com">
 			<button type="submit" class="btn">Перезвоните</button>
@@ -291,12 +335,10 @@
 		<p>Оставьте свой номер телефона и наш менеджер свяжется с Вами</p>
 		<form method="POST" enctype="multipart/form-data">
 			<!-- Hidden Required Fields -->
-			<input type="hidden" name="project_name" value="Service Avtobum">
-			<input type="hidden" name="admin_email" value="<?php echo $email; ?>">
-			<input type="hidden" name="form_subject" value="Попап форма - хочу дешевле">
+			<input type="hidden" name="Форма" value="Попап форма - хочу дешевле">
 			<!-- END Hidden Required Fields -->
 
-			<input type="text" placeholder="Ваше имя*" name="Имя" required>
+			<input type="text" placeholder="Ваше имя" name="Имя" >
 			<input type="tel" placeholder="8 (999) 999-99-99*" name="Телефон" required>
 			<input type="email" name="Email" placeholder="mail@example.com">
 			<div class="file-upload" id="file-upload"></div>
