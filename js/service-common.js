@@ -148,9 +148,9 @@ jQuery(function($) {
 			// console.log( "success data:", data );
 			var res = JSON.parse(data);
 			if(res.error) 
-				$('.error-message').val(res.error);
+				$('.error-message').html(res.error);
 			else
-				$('.error-message').val("");
+				$('.error-message').html("");
 			setTimeout(function() {
 				$.magnificPopup.close();
 				$.magnificPopup.open({
@@ -166,7 +166,7 @@ jQuery(function($) {
 				btnSubmit.removeAttr("disabled");
 			}, 100);
 		}).fail(function( jqXHR, textStatus ) {
-			$('.error-message').val("Request failed: " + textStatus);
+			$('.error-message').html("Request failed: " + textStatus);
 			setTimeout(function() {
 				$.magnificPopup.close();
 				$.magnificPopup.open({
