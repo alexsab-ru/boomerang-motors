@@ -146,21 +146,27 @@ jQuery(function($) {
 			data: th.serialize() +'&referer=' + replUrl
 		}).done(function( data ) {
 			// console.log( "success data:", data );
+			var res = JSON.parse(data);
+			if(res.error) 
+				$('.error-message').val(res.error);
+			else
+				$('.error-message').val("");
 			setTimeout(function() {
 				$.magnificPopup.close();
 				$.magnificPopup.open({
 					items: {
-						src: (data == 'OK') ? '.thanks' : '.error',
+						src: (res.answer == 'OK') ? '.thanks' : '.error',
 						type: 'inline'
 					}
 				});
-				if(data == 'OK') {
+				if(res.answer == 'OK') {
 					dropzone.removeAllFiles(true);
 					th.trigger("reset");
 				}
 				btnSubmit.removeAttr("disabled");
 			}, 100);
-		}).fail(function() {
+		}).fail(function( jqXHR, textStatus ) {
+			$('.error-message').val("Request failed: " + textStatus);
 			setTimeout(function() {
 				$.magnificPopup.close();
 				$.magnificPopup.open({
