@@ -57,7 +57,7 @@
 						<img src="img/phone.svg" alt="Телефон">
 						<span class="phone-info">
 							<a href="tel:88469228872">8 (846) 922-88-72</a>
-							<small>Заказать звонок</small>
+							<small>Позвонить</small>
 						</span>							
 					</div>
 					<div class="phone phone-three">
@@ -104,7 +104,7 @@
 				</div>
 				<!-- /.hero-text -->
 				<div class="hero-form">
-					<h2>Записаться на&nbsp;бесплатный контрольный осмотр</h2>
+					<h2>Записаться на&nbsp;<span>бесплатный</span> контрольный осмотр</h2>
 					<p>Оставьте свой номер телефона, и&nbsp;мы&nbsp;перезвоним Вам</p>
 					<form method="POST">
 						<!-- Hidden Required Fields -->
@@ -147,7 +147,7 @@
 			<div class="container">
 				<div class="services-head">
 					<h2>Наши услуги</h2>
-					<span class="descr">На&nbsp;большинство проводимых нами работ и&nbsp;запчасти мы&nbsp;даем гарантию до&nbsp;24&nbsp;месяцев или 40&nbsp;000&nbsp;км пробега</span>
+					<span class="descr">На&nbsp;все проводимые нами работы мы&nbsp;даем гарантию до&nbsp;6&nbsp;месяцев в&nbsp;зависимости от&nbsp;типа работ</span>
 				</div>
 				<div class="services-list"></div>
 				<!-- /.services-list -->
@@ -193,9 +193,9 @@
 						<a href="tel:88469228872" class="dealer-phone">8 (846) 922-88-72</a>
 						<a href="mailto:service@avtobum63.ru" class="dealer-email">service@avtobum63.ru</a>	
 					</span>
-					<span class="dealer-address">пр. Кирова, 10
-					<small><a target="_blank" href="https://yandex.ru/maps/?z=17&ll=50.289318999999956,53.19370799999778&l=map&rtext=~53.193708,50.289319&origin=jsapi_2_1_76&from=api-maps">Проложить маршрут</a></small></span>
-					<sapn class="dealer-time">ежедневно: 9:00 — 18:00</sapn>
+					<span class="dealer-address">пр. Кирова, 10</span>
+					<span class="dealer-path"><a target="_blank" class="btn bounce" href="https://yandex.ru/maps/?z=17&ll=50.289318999999956,53.19370799999778&l=map&rtext=~53.193708,50.289319&origin=jsapi_2_1_76&from=api-maps">Проложить маршрут</a></span>
+					<span class="dealer-time">ежедневно: 9:00 — 18:00</span>
 				</span>
 				<span id="dealer-map1" class="dealer-map lazyload" style="background-image: url(img/loading-1.gif);" data-srcbefore="img/map.jpg">
 					<span class="loader loader-default"></span>
@@ -211,9 +211,9 @@
 						<a href="tel:88469228872" class="dealer-phone">8 (846) 922-88-72</a>
 						<a href="mailto:service@avtobum63.ru" class="dealer-email">service@avtobum63.ru</a>	
 					</span>
-					<span class="dealer-address">Аэропортовское шоссе 1
-					<small><a target="_blank" href="https://yandex.ru/maps/?z=17&ll=50.35532399999995,53.24972599999765&l=map&rtext=~53.249726,50.355324&origin=jsapi_2_1_76&from=api-maps">Проложить маршрут</a></small></span>
-					<sapn class="dealer-time">ежедневно: 9:00 — 18:00</sapn>
+					<span class="dealer-address">Аэропортовское шоссе 1</span>
+					<span class="dealer-path"><a target="_blank" class="btn bounce" href="https://yandex.ru/maps/?z=17&ll=50.35532399999995,53.24972599999765&l=map&rtext=~53.249726,50.355324&origin=jsapi_2_1_76&from=api-maps">Проложить маршрут</a></span>
+					<span class="dealer-time">ежедневно: 9:00 — 18:00</span>
 				</span>
 				<span id="dealer-map2" class="dealer-map lazyload" style="background-image: url(img/loading-1.gif);" data-srcbefore="img/map2.jpg">
 					<span class="loader loader-default"></span>
@@ -363,8 +363,8 @@
 
 	<script>
 		
-		var services = [ 
-			{ 
+		var services = {
+			kuzovnoy: { 
 				title: "Кузовной ремонт",
 				list: [
 					'кузовные работы с&nbsp;устранением перекосов лонжеронов, проемов дверей',
@@ -376,7 +376,7 @@
 					'замена и&nbsp;установка автостекол',
 				],
 			},
-			{
+			mehanicheskiy: {
 				title: "Механический ремонт",
 				list: [
 					'ремонт бензиновых и&nbsp;дизельных двигателей',
@@ -395,7 +395,7 @@
 					'шиномонтаж',
 				],
 			},
-			{ 
+			diagnostika: { 
 				title: "Диагностика и&nbsp;электрика",
 				list: [
 					'сканирование ЭБУ',
@@ -409,21 +409,22 @@
 					'установка доп. оборудования',
 				],
 			}
-		];
+		};
 
 		$.each(services, function(key, val){
-			out = '<div class="services-item">';
-			out += '<h2 class="services-item__title" id="'+ key +'">'+ val.title +'</h2>';
-			out += '<span class="serv-table" data-id="'+ key +'">';
-			out += '<span class="serv-table-head serv-table-row"><span class="serv-table-td">Виды работ</span></span>';
+			out = '<div class="services-item">\
+					<a id="'+ key +'" class="anchor"></a>\
+					<h2 class="services-item__title" data-id="'+ key +'">'+ val.title +'</h2>\
+					<span class="serv-table" data-id="'+ key +'">\
+					<span class="serv-table-head serv-table-row"><span class="serv-table-td">Виды работ</span></span>';
 			$.each(val.list, function(index, task){
-				out += '<span class="serv-table-row check">';
-				out += '<span class="serv-table-td"><a href="#cheaper" class="modal-link">'+ task +'</a></span>';
-				out += '</span>';							
+				out += '<span class="serv-table-row check">\
+							<span class="serv-table-td"><a href="#cheaper" class="modal-link">'+ task +'</a></span>\
+						</span>';							
 			});
-			out += '<span class="serv-table-foot serv-table-row"><span class="serv-table-td"><a href="#cheaper" class="modal-link nowrap" data-title="'+val.title+'">Узнать цену</a></span></span>';
-			out += '</span>';
-			out += '</div>';
+			out += '<span class="serv-table-foot serv-table-row"><span class="serv-table-td"><a href="#cheaper" class="modal-link nowrap" data-title="'+val.title+'">Узнать цену</a></span></span>\
+				</span>\
+			</div>';
 			$('.services-list').append(out);
 		});
 

@@ -9259,6 +9259,15 @@ a:hover {
   color: #208fce;
 }
 
+@media (min-width: 1085px) {
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -110px;
+    visibility: hidden;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -9468,6 +9477,10 @@ strong {
 .hero-form h2 {
   font-size: 18px;
   color: #000;
+}
+
+.hero-form h2 span {
+  color: #208fce;
 }
 
 .hero-form p {
@@ -10044,9 +10057,9 @@ form small a:hover {
   font-size: 24px;
 }
 
-.maps .dealer-address {
+.maps .dealer-address, .maps .dealer-path {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .maps .dealer-time {

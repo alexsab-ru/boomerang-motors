@@ -227,7 +227,7 @@ jQuery(function($) {
 	/* */
 	$('.services-item__title').on('click', function() {
 		var th = $(this);
-		var id = th.attr('id');
+		var id = th.prev().attr('id');
 		var parent = th.parent();
 		// th.closest('.services-item').find('.services-item__car').removeClass('active');
 		th.closest('.services-item').find('.serv-table').slideUp(100);
@@ -244,6 +244,17 @@ jQuery(function($) {
 		}
 	});
 	/**/
+
+	if(window.location.hash != '') {
+		switch(window.location.hash){
+			case "#kuzovnoy":
+			case "#mehanicheskiy":
+			case "#diagnostika":
+				$(window.location.hash + ' + .services-item__title').click();
+				break
+			default:
+		}
+	}
 
 	//при клике на заголовок модели
 	/* * /
