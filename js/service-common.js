@@ -181,7 +181,7 @@ jQuery(function($) {
 		return false;
 	});
 
-	$('.services-item__title').append('<span class="arrow"></span>');
+	// $('.services-item__title').append('<span class="arrow"></span>');
 
 	$("section h2, h2+.descr, .offer-form, .benefit, .replacement-form").animated("fadeInUp", "fadeInUp");
 	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");

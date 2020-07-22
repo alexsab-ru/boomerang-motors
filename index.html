@@ -414,7 +414,7 @@
 		$.each(services, function(key, val){
 			out = '<div class="services-item">\
 					<a id="'+ key +'" class="anchor"></a>\
-					<h2 class="services-item__title" data-id="'+ key +'">'+ val.title +'</h2>\
+					<h2 class="services-item__title" data-id="'+ key +'">'+ val.title +'<span class="arrow"></span></h2>\
 					<span class="serv-table" data-id="'+ key +'">\
 					<span class="serv-table-head serv-table-row"><span class="serv-table-td">Виды работ</span></span>';
 			$.each(val.list, function(index, task){
