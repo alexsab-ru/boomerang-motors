@@ -23,6 +23,10 @@
 
 	&.active .services-item__title
 		box-shadow: 0 0 30px $orange-transparent
+		.arrow
+			transform: translateY(-50%) rotate(90deg)
+			&:before, &:after
+				background-color: $orange
 
 .services-item__title
 	margin: 0
@@ -33,17 +37,40 @@
 	text-align: center
 	color: #7D8083
 	padding: 8px
+	position: relative
 	cursor: pointer
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1)
 	transition: all .25s ease
+	opacity: 0
 	+media-breakpoint-down(xs)
 		font-size: 22px
 	@media (max-width: 340px)
 		font-size: 20px
-
-
 	&:hover
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+	.arrow
+		position: absolute
+		width: 30px
+		height: 30px
+		right: 10px
+		top: 50%
+		transform: translateY(-50%) rotate(0deg)
+		transition: all .3s
+		&:before, &:after
+			content: ''
+			display: block
+			position: absolute
+			left: 25%
+			width: 15px
+			height: 2px
+			background-color: $accent
+		&:before
+			transform: rotate(45deg)
+			top: 9px
+		&:after
+			transform: rotate(-45deg)
+			bottom: 9px
+
 
 .services-item__car--list
 	position: relative

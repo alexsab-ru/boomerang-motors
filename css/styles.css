@@ -8712,18 +8712,6 @@ img.mfp-img {
   animation-duration: 3s;
 }
 
-@media (print), (prefers-reduced-motion: reduce) {
-  .animated {
-    -webkit-animation-duration: 1ms !important;
-    animation-duration: 1ms !important;
-    -webkit-transition-duration: 1ms !important;
-    -o-transition-duration: 1ms !important;
-       transition-duration: 1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-    animation-iteration-count: 1 !important;
-  }
-}
-
 /*
  * The MIT License
  * Copyright (c) 2012 Matias Meno <m@tias.me>
@@ -9492,12 +9480,14 @@ h1 {
   font-size: 52px;
   margin-top: 0.5rem;
   line-height: 1;
+  opacity: 0;
 }
 
 .subtitle {
   font-size: 26px;
   display: block;
   padding-left: 25px;
+  opacity: 0;
 }
 
 .subtitle:before {
@@ -9647,6 +9637,16 @@ form small a:hover {
           box-shadow: 0 0 30px #ff6c1c63;
 }
 
+.services-item.active .services-item__title .arrow {
+  -webkit-transform: translateY(-50%) rotate(90deg);
+      -ms-transform: translateY(-50%) rotate(90deg);
+          transform: translateY(-50%) rotate(90deg);
+}
+
+.services-item.active .services-item__title .arrow:before, .services-item.active .services-item__title .arrow:after {
+  background-color: #dc5c13;
+}
+
 .services-item__title {
   margin: 0;
   border-radius: 12px;
@@ -9656,12 +9656,14 @@ form small a:hover {
   text-align: center;
   color: #7D8083;
   padding: 8px;
+  position: relative;
   cursor: pointer;
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+  opacity: 0;
 }
 
 @media (max-width: 575.98px) {
@@ -9679,6 +9681,44 @@ form small a:hover {
 .services-item__title:hover {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.services-item__title .arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(0deg);
+      -ms-transform: translateY(-50%) rotate(0deg);
+          transform: translateY(-50%) rotate(0deg);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.services-item__title .arrow:before, .services-item__title .arrow:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 25%;
+  width: 15px;
+  height: 2px;
+  background-color: #208fce;
+}
+
+.services-item__title .arrow:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 9px;
+}
+
+.services-item__title .arrow:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 9px;
 }
 
 .services-item__car--list {
