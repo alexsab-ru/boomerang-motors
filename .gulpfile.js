@@ -132,7 +132,7 @@ function newstreetpunk_service_avtobum_watch() {
 	watch(projects.newstreetpunk_service_avtobum.code.src).on('change', browserSync.reload);
 };
 
-module.exports = parallel(newstreetpunk_service_avtobum_styles, newstreetpunk_service_avtobum_scripts, newstreetpunk_service_avtobum_browsersync, newstreetpunk_service_avtobum_watch);
+exports.newstreetpunk_service_avtobum = parallel(newstreetpunk_service_avtobum_styles, newstreetpunk_service_avtobum_scripts, newstreetpunk_service_avtobum_browsersync, newstreetpunk_service_avtobum_watch);
 
 
 /* newstreetpunk_service_avtobum END */
