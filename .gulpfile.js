@@ -39,7 +39,7 @@ if(typeof port == 'undefined')
 	global.port = 8100;
 
 
-projects.newstreetpunk_service_avtobum = {
+projects.service_avtobum = {
 
 	port: ++port,
 
@@ -86,17 +86,17 @@ projects.newstreetpunk_service_avtobum = {
 }
 
 
-/* newstreetpunk_service_avtobum BEGIN */
+/* service_avtobum BEGIN */
 
 // Local Server
-function newstreetpunk_service_avtobum_browsersync() {
+function service_avtobum_browsersync() {
 	connect.server({
-		port: projects.newstreetpunk_service_avtobum.port,
-		base: projects.newstreetpunk_service_avtobum.base,
+		port: projects.service_avtobum.port,
+		base: projects.service_avtobum.base,
 	}, function (){
 		browserSync.init({
-			// server: { baseDir: projects.newstreetpunk_service_avtobum.base + '/' },
-			proxy: '127.0.0.1:' + projects.newstreetpunk_service_avtobum.port,
+			// server: { baseDir: projects.service_avtobum.base + '/' },
+			proxy: '127.0.0.1:' + projects.service_avtobum.port,
 			notify: false,
 			online: online,
 		});
@@ -104,37 +104,37 @@ function newstreetpunk_service_avtobum_browsersync() {
 };
 
 // Custom Styles
-function newstreetpunk_service_avtobum_styles() {
-	return src(projects.newstreetpunk_service_avtobum.styles.src)
+function service_avtobum_styles() {
+	return src(projects.service_avtobum.styles.src)
 	.pipe(eval(preprocessor)({ outputStyle: 'expanded' }).on("error", notify.onError()))
-	.pipe(concat(projects.newstreetpunk_service_avtobum.styles.output))
+	.pipe(concat(projects.service_avtobum.styles.output))
 	.pipe(autoprefixer({ grid: true, overrideBrowserslist: ['last 10 versions'] }))
 	// .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Optional. Comment out when debugging
-	.pipe(dest(projects.newstreetpunk_service_avtobum.styles.dest))
+	.pipe(dest(projects.service_avtobum.styles.dest))
 	.pipe(browserSync.stream())
 
 };
 
 // Scripts & JS Libraries
-function newstreetpunk_service_avtobum_scripts() {
-	return src(projects.newstreetpunk_service_avtobum.scripts.src)
-	.pipe(concat(projects.newstreetpunk_service_avtobum.scripts.output))
+function service_avtobum_scripts() {
+	return src(projects.service_avtobum.scripts.src)
+	.pipe(concat(projects.service_avtobum.scripts.output))
 	// .pipe(uglify()) // Minify js (opt.)
-	.pipe(header(projects.newstreetpunk_service_avtobum.forProd))
-	.pipe(dest(projects.newstreetpunk_service_avtobum.scripts.dest))
+	.pipe(header(projects.service_avtobum.forProd))
+	.pipe(dest(projects.service_avtobum.scripts.dest))
 	.pipe(browserSync.stream())
 };
 
-function newstreetpunk_service_avtobum_watch() {
-	watch(projects.newstreetpunk_service_avtobum.styles.watch, newstreetpunk_service_avtobum_styles);
-	watch(projects.newstreetpunk_service_avtobum.scripts.src, newstreetpunk_service_avtobum_scripts);
+function service_avtobum_watch() {
+	watch(projects.service_avtobum.styles.watch, service_avtobum_styles);
+	watch(projects.service_avtobum.scripts.src, service_avtobum_scripts);
 
-	watch(projects.newstreetpunk_service_avtobum.code.src).on('change', browserSync.reload);
+	watch(projects.service_avtobum.code.src).on('change', browserSync.reload);
 };
 
-exports.newstreetpunk_service_avtobum = parallel(newstreetpunk_service_avtobum_styles, newstreetpunk_service_avtobum_scripts, newstreetpunk_service_avtobum_browsersync, newstreetpunk_service_avtobum_watch);
+exports.service_avtobum = parallel(service_avtobum_styles, service_avtobum_scripts, service_avtobum_browsersync, service_avtobum_watch);
 
 
-/* newstreetpunk_service_avtobum END */
+/* service_avtobum END */
 
 
