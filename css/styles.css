@@ -8873,7 +8873,7 @@ strong {
 }
 
 .btn {
-  background-color: #208fce;
+  background-color: #dc5c13;
   color: #fff;
   text-decoration: none;
   font-size: 14px;
@@ -8888,7 +8888,7 @@ strong {
 
 .btn:hover {
   color: #fff;
-  background-color: #1e86c1;
+  background-color: #ce5612;
 }
 
 .btn-white {
@@ -8897,6 +8897,14 @@ strong {
   border: 1px solid #208fce;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+input[tabindex="-1"] {
+  opacity: 0;
+  position: absolute;
+  z-index: -100;
+  max-width: 200px;
+  height: 0;
 }
 
 .header {
@@ -9181,10 +9189,6 @@ form small {
 
 form small a {
   text-decoration: none;
-  border-bottom: 1px solid #000000;
-  -webkit-box-shadow: inset 0px -0px 0px 0px #000;
-          box-shadow: inset 0px -0px 0px 0px #000;
-  color: #ff8562;
   font-weight: 300;
 }
 
