@@ -132,7 +132,7 @@ function service_avtobum_watch() {
 	watch(projects.service_avtobum.code.src).on('change', browserSync.reload);
 };
 
-exports.service_avtobum = parallel(service_avtobum_styles, service_avtobum_scripts, service_avtobum_browsersync, service_avtobum_watch);
+exports.avtobum_service = parallel(service_avtobum_styles, service_avtobum_scripts, service_avtobum_browsersync, service_avtobum_watch);
 
 
 /* service_avtobum END */
