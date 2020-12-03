@@ -8920,6 +8920,13 @@ input[tabindex="-1"] {
   padding-right: 20px;
 }
 
+.header-logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  margin-right: 10px;
+}
+
 .header-logo img {
   width: 240px;
 }
@@ -8944,6 +8951,10 @@ input[tabindex="-1"] {
 .header-right {
   display: inline-block;
   vertical-align: middle;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  margin-left: 10px;
 }
 
 .header-right a {
@@ -8954,12 +8965,18 @@ input[tabindex="-1"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  max-width: 975px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .header .phone {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 25px;
+  margin-right: 10px;
 }
 
 .header .phone:last-child {
@@ -10116,6 +10133,12 @@ p.oferta {
 }
 
 /*==========  Desktop First  ==========*/
+@media (min-width: 576px) and (max-width: 680px) {
+  .header-phones .phone img {
+    display: none;
+  }
+}
+
 @media (max-width: 1199.98px) {
   .car {
     padding-bottom: 150px;
@@ -10173,6 +10196,13 @@ p.oferta {
   }
   .hero {
     padding-top: 0;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1084px) {
+  .header-phones {
+    width: 100%;
+    max-width: 700px;
   }
 }
 

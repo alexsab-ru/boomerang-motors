@@ -1,5 +1,12 @@
 /*==========  Desktop First  ==========*/
 
+
+// @media (min-width: 1085px) and (max-width: 1200px)
+@media (min-width: 576px) and (max-width: 680px)
+	.header-phones
+		.phone img
+			display: none
+
 // ≥1200px
 +media-breakpoint-down(lg)
 	.car
@@ -30,7 +37,7 @@
 	.maps .dealer-info
 		padding-left: 50px
 
-@media  (max-width: 1084px) 
+@media (max-width: 1084px)
 	.header
 		position: relative
 	.header-logo img, .header-phones
@@ -42,6 +49,11 @@
 		padding: 15px 0
 	.hero
 		padding-top: 0
+
+@media (min-width: 576px) and (max-width: 1084px)
+	.header-phones
+		width: 100%
+		max-width: 700px
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -74,7 +86,7 @@
 	.car
 		width: 46%
 		margin-left: 2%
-		margin-right: 2%	
+		margin-right: 2%
 	.player
 		display: none
 	.modal
@@ -82,7 +94,7 @@
 		top: 30px
 		transform: translate(-50%, 0%)
 		padding: 25px 15px
-	
+
 // ≥576px
 +media-breakpoint-down(xs)
 	.cars-links li
@@ -167,10 +179,10 @@
 	body
 		font-size: 20px
 
-@media (min-width: 1600px) 
-	.container 
+@media (min-width: 1600px)
+	.container
 		max-width: 1560px
-	body 
+	body
 		font-size: 22px
 	.car
 		width: 21%
@@ -180,5 +192,5 @@
 		flex: none
 	.car .descr
 		font-size: 17px
-	
+
 

@@ -10,6 +10,8 @@
 	padding-left: 20px
 	padding-right: 20px
 	&-logo
+		flex: 0 1 auto
+		margin-right: 10px
 		img
 			width: 240px
 		small
@@ -22,18 +24,23 @@
 	&-right
 		display: inline-block
 		vertical-align: middle
+		flex: 0 1 auto
+		margin-left: 10px
 		a
 			display: block
 	&-phones
 		display: flex
+		flex: 1 0 auto
+		max-width: 975px
+		justify-content: space-around
 	.phone
 		display: inline-block
 		vertical-align: middle
-		margin-right: 25px
+		margin-right: 10px
 		&:last-child()
 			margin-right: 0
 		a:hover
-			color: $text	
+			color: $text
 		img
 			width: 35px
 			height: 100%
