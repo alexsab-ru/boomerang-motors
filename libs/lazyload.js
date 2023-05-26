@@ -230,3 +230,6 @@
 
     return LazyLoad;
 });
+
+
+export default LazyLoad;

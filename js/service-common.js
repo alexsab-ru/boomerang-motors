@@ -1,3 +1,18 @@
+try {
+    window.$ = window.jQuery = require('jquery');
+} catch (e) {
+	console.log('connect error: '+e);
+}
+
+import Dropzone from '../libs/dropzone/dropzone.js'
+import LazyLoad from '../libs/lazyload.js'
+require('../libs/animate/animate-css.js')
+require('../libs/waypoint.js')
+require('../libs/Magnific-Popup-master/jquery.magnific-popup.js')
+// require('../libs/lazyload.js')
+require('./map.js')
+// require('../libs/jquery.mb.YTPlayer.min.js')
+
 jQuery(function($) {
 
 	$('.rand').each(function(){
@@ -187,9 +202,9 @@ jQuery(function($) {
 	$("h1, .subtitle, .maps .dealer:nth-child(odd) .dealer-info").animated("fadeInLeft", "fadeInLeft");
 	$(".hero-form, .maps .dealer:nth-child(even) .dealer-info").animated("fadeInRight", "fadeInRight");
 
-	if ($(window).width() > 768) {
-		$('.player').mb_YTPlayer();
-	}
+	// if ($(window).width() > 768) {
+	// 	$('.player').mb_YTPlayer();
+	// }
 
 	$('.top').click(function() {
 		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
@@ -223,7 +238,10 @@ jQuery(function($) {
 		$('html').removeAttr('style');
 	});
 
-	$('.lazyload').lazyload();
+	let images = document.querySelectorAll(".lazyload");
+	new LazyLoad(images);
+
+	// jQuery('.lazyload').lazyload();
 
 	//при клике на заголовок ТО
 	/* */

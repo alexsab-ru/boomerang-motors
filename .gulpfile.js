@@ -48,7 +48,7 @@ projects.service_avtobum = {
 
 	styles: {
 		src:	basename + '/' + preprocessor + '/service-style.'+preprocessor,
-		watch:    basename + '/' + preprocessor + '/**/*.'+preprocessor,
+		watch:  basename + '/' + preprocessor + '/**/*.'+preprocessor,
 		dest:   basename + '/css',
 		output: 'styles.css',
 	},

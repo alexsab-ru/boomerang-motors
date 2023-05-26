@@ -5,3 +5,4 @@ phpmailer
 sftp-config.json
 vendor
 uploads
+node_modules
