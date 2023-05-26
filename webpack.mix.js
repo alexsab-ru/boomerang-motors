@@ -9,7 +9,7 @@ mix.autoload({
 mix
 	.js('js/service-common.js', 'js/scripts.min.js')
 	.sass('sass/service-style.sass', 'css/styles.css')
-	.setPublicPath('/')
+	// .setPublicPath('/')
 	.serve('php -S 127.0.0.1:8080 -t ./', {
 		verbose: true,
 		watch: true,
