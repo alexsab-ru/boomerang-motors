@@ -132,7 +132,7 @@ jQuery(function($) {
     				var thumbnailElement = images[i];
     				thumbnailElement.alt = file.name;
     				thumbnailElement.src = dataUrl;
-    				url = dataUrl;
+    				// url = dataUrl;
     			}
     			setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
     		}
