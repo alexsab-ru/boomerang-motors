@@ -9,7 +9,6 @@ import LazyLoad from '../libs/lazyload.js'
 require('../libs/animate/animate-css.js')
 require('../libs/waypoint.js')
 require('../libs/Magnific-Popup-master/jquery.magnific-popup.js')
-// require('../libs/lazyload.js')
 require('./map.js')
 // require('../libs/jquery.mb.YTPlayer.min.js')
 
@@ -240,8 +239,6 @@ jQuery(function($) {
 
 	let images = document.querySelectorAll(".lazyload");
 	new LazyLoad(images);
-
-	// jQuery('.lazyload').lazyload();
 
 	//при клике на заголовок ТО
 	/* */
